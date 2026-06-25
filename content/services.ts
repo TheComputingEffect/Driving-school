@@ -1,0 +1,82 @@
+export interface ServiceItem {
+  id: string;
+  title: string;
+  description: string;
+  slug: string;
+  features: string[];
+}
+
+export const services: ServiceItem[] = [
+  {
+    id: "service-driving-licence",
+    title: "Driving Licence Application",
+    description: "End-to-end guidance for obtaining a fresh Learner's Licence (LLR) and Permanent Driving Licence in Coimbatore.",
+    slug: "driving-licence",
+    features: [
+      "Online Document Upload Assistance",
+      "LLR Test Prep & Slots Booking",
+      "Practical Driving Test Scheduling",
+      "RTO Documentation Support"
+    ]
+  },
+  {
+    id: "service-licence-renewal",
+    title: "Licence Renewal",
+    description: "Hassle-free process to renew expired or expiring driving licences, ensuring you stay legally authorized on the road.",
+    slug: "licence-renewal",
+    features: [
+      "Medical Certificate (Form 1A) Assistance",
+      "Expired Licence Validity Recovery",
+      "Vahan Portal Online Filings",
+      "Smart Card Dispatch Tracking"
+    ]
+  },
+  {
+    id: "service-name-change",
+    title: "Name Change on Licence",
+    description: "Get name corrections or marital name changes updated on your official government driving licence record.",
+    slug: "name-change",
+    features: [
+      "Gazette Notification Support",
+      "Affidavit Preparation Checklist",
+      "Official RTO Data Updation",
+      "New Smart Card Issuance"
+    ]
+  },
+  {
+    id: "service-address-change",
+    title: "Address Change on Licence",
+    description: "Relocating within Coimbatore or from another district? Get your new address updated on your driving licence seamlessly.",
+    slug: "address-change",
+    features: [
+      "No Objection Certificate (NOC) Handling",
+      "Address Proof Verification Assistance",
+      "Inter-State Licence Transfers",
+      "Doorstep Smart Card Delivery"
+    ]
+  },
+  {
+    id: "service-vehicle-fc",
+    title: "Vehicle FC Upgrade",
+    description: "Get Fitness Certificates (FC) renewed for your transport or non-transport vehicles, matching all Indian government norms.",
+    slug: "vehicle-fc",
+    features: [
+      "Emission & Mechanical Safety Checks",
+      "RTO Fitness Inspection Support",
+      "Tax Assessment & Payments",
+      "FC Green Sticker Allocation"
+    ]
+  },
+  {
+    id: "service-rto-services",
+    title: "RTO Services",
+    description: "Complete assistance for vehicle registration, road tax payments, hypothecation termination (HP), and duplicate licence issues.",
+    slug: "rto-services",
+    features: [
+      "Hypothecation (HP) Removal Support",
+      "Duplicate Licence Retrieval (Lost/Damaged)",
+      "Re-registration & Tax Payments",
+      "Clear, Legal Government Intermediary"
+    ]
+  }
+];
