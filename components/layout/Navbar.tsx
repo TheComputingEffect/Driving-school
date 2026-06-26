@@ -4,21 +4,20 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import MobileDrawer from "./MobileDrawer";
+import DemoModal from "../shared/DemoModal";
 import CTAButton from "../shared/CTAButton";
 
 export const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Courses", href: "/courses" },
   { name: "Services", href: "/services" },
   { name: "Locations", href: "/locations" },
-  { name: "Blog", href: "/blog" },
-  { name: "FAQ", href: "/faq" },
   { name: "Contact", href: "/contact" }
 ];
 
 export default function Navbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   return (
     <>
@@ -68,9 +67,12 @@ export default function Navbar() {
 
           {/* Desktop CTA Action */}
           <div className="hidden lg:block">
-            <CTAButton href="/contact" variant="primary" className="px-5 py-2 text-xs rounded-lg">
+            <button 
+              onClick={() => setIsDemoModalOpen(true)}
+              className="px-5 py-2 text-xs rounded-lg bg-brand-red text-white hover:bg-red-700 font-bold tracking-wide uppercase transition-colors"
+            >
               Book Free Demo
-            </CTAButton>
+            </button>
           </div>
 
           {/* Mobile Toggler */}
@@ -92,6 +94,12 @@ export default function Navbar() {
         isOpen={isDrawerOpen}
         onClose={() => setIsDrawerOpen(false)}
         navLinks={navLinks}
+      />
+
+      {/* Demo Modal */}
+      <DemoModal 
+        isOpen={isDemoModalOpen} 
+        onClose={() => setIsDemoModalOpen(false)} 
       />
     </>
   );

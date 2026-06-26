@@ -1,12 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Calendar, MessageSquare, Phone, ShieldCheck, Award, Star, Compass, Shield, MapPin } from "lucide-react";
+import { Calendar, Star, Shield, MapPin, Phone } from "lucide-react";
 import { contactInfo } from "@/content/contactInfo";
-import CTAButton from "../shared/CTAButton";
+import DemoModal from "../shared/DemoModal";
 
 export default function HeroSection() {
+  const [isDemoModalOpen, setIsDemoModalOpen] = React.useState(false);
+
   const containerVariants: any = {
     hidden: { opacity: 0 },
     visible: {
@@ -25,7 +28,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-[#FAFAFA] to-[#F5F7FA] py-16 md:py-24 overflow-hidden border-b border-brand-border">
+    <section className="bg-gradient-to-b from-[#FAFAFA] to-[#F5F7FA] pt-2 pb-6 md:pt-4 md:pb-12 overflow-hidden border-b border-brand-border">
       <div className="max-w-[1200px] mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left text content */}
         <motion.div
@@ -47,25 +50,6 @@ export default function HeroSection() {
             </span>
           </motion.div>
 
-          {/* Trust Badges */}
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-2">
-            <span className="inline-flex items-center gap-1 bg-brand-red-light text-brand-red text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              Govt Approved
-            </span>
-            <span className="inline-flex items-center gap-1 bg-brand-blue-light text-brand-blue text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
-              <Award className="w-3.5 h-3.5" />
-              Ladies Trainers
-            </span>
-            <span className="inline-flex items-center gap-1 bg-zinc-100 text-brand-muted text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
-              <Compass className="w-3.5 h-3.5" />
-              Pickup & Drop
-            </span>
-            <span className="inline-flex items-center gap-1 bg-brand-yellow-bg text-zinc-800 text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
-              <Star className="w-3.5 h-3.5 fill-brand-yellow text-brand-yellow" />
-              Student Discounts
-            </span>
-          </motion.div>
 
           {/* Heading with embedded keywords */}
           <motion.h1
@@ -103,32 +87,25 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Call to Actions (Red primary, Green WhatsApp, Blue Link) */}
+          {/* Call to Actions (Red primary, Green WhatsApp) */}
           <motion.div
             variants={itemVariants}
             className="flex flex-col sm:flex-row sm:items-center gap-4 pt-4"
           >
-            <CTAButton href="/contact" variant="primary" className="gap-2 text-sm font-semibold py-3.5">
+            <button 
+              onClick={() => setIsDemoModalOpen(true)}
+              className="inline-flex items-center justify-center gap-2 text-sm font-semibold py-3.5 px-6 rounded-lg bg-brand-red text-white hover:bg-red-700 transition-colors uppercase tracking-wide"
+            >
               <Calendar className="w-4.5 h-4.5" />
               Book Free Demo &rarr;
-            </CTAButton>
-            
-            <CTAButton
-              href={contactInfo.whatsappLink}
-              variant="whatsapp"
-              external
-              className="gap-2 text-sm font-semibold py-3.5"
-            >
-              <MessageSquare className="w-4.5 h-4.5 fill-white/10" />
-              WhatsApp Us
-            </CTAButton>
+            </button>
             
             <a
               href={`tel:${contactInfo.phone}`}
-              className="inline-flex items-center justify-center gap-1.5 text-sm font-bold text-brand-blue hover:text-blue-800 transition-colors p-2 hover:underline select-none"
+              className="inline-flex items-center justify-center gap-2 text-sm font-semibold py-3.5 px-6 rounded-lg bg-white border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-colors uppercase tracking-wide"
             >
               <Phone className="w-4.5 h-4.5" />
-              Call Now: {contactInfo.phoneFormatted}
+              Call Us
             </a>
           </motion.div>
         </motion.div>
@@ -260,6 +237,8 @@ export default function HeroSection() {
           </svg>
         </motion.div>
       </div>
+
+      <DemoModal isOpen={isDemoModalOpen} onClose={() => setIsDemoModalOpen(false)} />
     </section>
   );
 }

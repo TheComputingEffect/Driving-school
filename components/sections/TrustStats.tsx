@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, animate, useInView } from "framer-motion";
 import { Star } from "lucide-react";
 
 interface StatItem {
@@ -9,14 +10,37 @@ interface StatItem {
   value: string;
   label: string;
   hasStars?: boolean;
+  isNumeric?: boolean;
+  numValue?: number;
+  suffix?: string;
+}
+
+function CountingNumber({ value, suffix }: { value: number; suffix: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-50px" });
+  const [displayValue, setDisplayValue] = useState(0);
+
+  useEffect(() => {
+    if (inView) {
+      const controls = animate(0, value, {
+        duration: 2,
+        ease: "easeOut",
+        onUpdate(v) {
+          setDisplayValue(Math.floor(v));
+        }
+      });
+      return () => controls.stop();
+    }
+  }, [inView, value]);
+
+  return <span ref={ref}>{displayValue}{suffix}</span>;
 }
 
 export default function TrustStats() {
   const stats: StatItem[] = [
-    { id: "stat-1", value: "5000+", label: "Students Trained" },
-    { id: "stat-2", value: "10+", label: "Years Experience" },
+    { id: "stat-1", value: "5000+", label: "Students Trained", isNumeric: true, numValue: 5000, suffix: "+" },
+    { id: "stat-2", value: "10+", label: "Years Experience", isNumeric: true, numValue: 10, suffix: "+" },
     { id: "stat-3", value: "4.9/5", label: "Google Rating", hasStars: true },
-    { id: "stat-4", value: "2", label: "Branches in Coimbatore" },
     { id: "stat-5", value: "100%", label: "Govt Approved" }
   ];
 
@@ -40,14 +64,14 @@ export default function TrustStats() {
   };
 
   return (
-    <section className="bg-white py-12 border-b border-brand-border">
+    <section className="bg-white py-12">
       <div className="max-w-[1200px] mx-auto px-4 md:px-6">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center divide-y md:divide-y-0 md:divide-x-0 lg:divide-x lg:divide-brand-border"
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
         >
           {stats.map((stat, idx) => (
             <motion.div
@@ -58,7 +82,11 @@ export default function TrustStats() {
               {/* Stat Value */}
               <div className="flex items-center gap-1">
                 <span className="text-3xl md:text-4xl font-extrabold text-brand-red tracking-tight font-heading">
-                  {stat.value}
+                  {stat.isNumeric && stat.numValue !== undefined ? (
+                    <CountingNumber value={stat.numValue} suffix={stat.suffix || ""} />
+                  ) : (
+                    stat.value
+                  )}
                 </span>
                 {stat.hasStars && (
                   <div className="flex items-center text-brand-yellow shrink-0">

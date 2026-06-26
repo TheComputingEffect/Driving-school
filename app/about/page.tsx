@@ -6,7 +6,7 @@ import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 export const metadata = constructMetadata({
   title: "About Our Academy | K. Priyadharshini Driving School Coimbatore",
   description:
-    "Learn about Coimbatore's premier driving training academy. Over 10 years of experience, certified ladies trainers, high test pass rates, and custom courses.",
+    "Learn about Coimbatore's premier driving training academy. Over 10 years of experience, certified lady trainers, high test pass rates, and custom courses.",
   path: "/about",
   keywords: ["About K. Priyadharshini Driving School", "Best Driving School Coimbatore"],
 });

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React from "react";
@@ -22,7 +23,7 @@ interface MarqueeItem {
 export default function MarqueeSection() {
   const items: MarqueeItem[] = [
     { text: "Govt Approved Driving School", icon: Shield },
-    { text: "Ladies Trainers Available", icon: Users },
+    { text: "Lady Trainers Available", icon: Users },
     { text: "Home Pickup & Drop", icon: MapPin },
     { text: "Weekend Classes Available", icon: Calendar },
     { text: "Special Student Discounts", icon: GraduationCap },
@@ -36,7 +37,7 @@ export default function MarqueeSection() {
   const duplicatedItems = [...items, ...items, ...items];
 
   return (
-    <section className="bg-[#F8FAFC] py-6 overflow-hidden border-b border-brand-border select-none">
+    <section className="bg-[#F8FAFC] py-6 overflow-hidden select-none">
       <div className="w-full max-w-[1200px] mx-auto px-4 md:px-6 relative">
         {/* Soft fading overlays on left and right borders to reduce harshness */}
         <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#F8FAFC] to-transparent z-10 pointer-events-none" />

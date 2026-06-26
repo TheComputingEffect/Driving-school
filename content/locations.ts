@@ -10,7 +10,7 @@ export const locations: LocationItem[] = [
   {
     name: "Kovaipudur",
     slug: "kovaipudur",
-    description: "Our main branch and premium driving training hub. Providing structured car driving lessons and ladies trainers across the calm avenues of Kovaipudur, Coimbatore.",
+    description: "Our main branch and premium driving training hub. Providing structured car driving lessons and lady trainers across the calm avenues of Kovaipudur, Coimbatore.",
     isPrimaryBranch: true,
     nearAreas: ["Perur", "Kuniamuthur", "Sundarapuram", "Ukkadam"]
   },

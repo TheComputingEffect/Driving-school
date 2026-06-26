@@ -69,12 +69,7 @@ export default function ComingSoon({
               </Link>
               <span className="text-xs text-brand-muted">Explore classes and locations</span>
             </li>
-            <li>
-              <Link href="/courses" className="text-brand-blue hover:underline font-medium block">
-                &rarr; Driving Courses
-              </Link>
-              <span className="text-xs text-brand-muted">Ladies classes & student packs</span>
-            </li>
+
             <li>
               <Link href="/contact" className="text-brand-blue hover:underline font-medium block">
                 &rarr; Contact Center

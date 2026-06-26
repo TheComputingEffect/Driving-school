@@ -1,6 +1,7 @@
 import React from "react";
 import { constructMetadata } from "@/lib/seo/metadata";
 import LocationsGrid from "@/components/sections/LocationsGrid";
+import MapSection from "@/components/sections/MapSection";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export const metadata = constructMetadata({
@@ -30,6 +31,9 @@ export default function LocationsPage() {
 
       {/* Renders real Locations Grid */}
       <LocationsGrid />
+
+      {/* Map Section */}
+      <MapSection />
     </div>
   );
 }

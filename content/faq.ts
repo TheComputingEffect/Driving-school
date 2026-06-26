@@ -17,7 +17,7 @@ export const faqs: FAQItem[] = [
   },
   {
     id: "faq-3",
-    question: "Do you have dedicated ladies trainers?",
+    question: "Do you have dedicated lady trainers?",
     answer: "Absolutely! We specialize in ladies driving classes in Coimbatore. Female students are trained exclusively by our certified, highly experienced female instructors in a safe, supportive, and comfortable environment."
   },
   {
