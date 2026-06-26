@@ -29,9 +29,7 @@ export default function LocationsGrid() {
       <div className="max-w-[1200px] mx-auto px-4 md:px-6">
         {/* SEO Critical H2 element: "Driving School Near You — Serving All of Coimbatore" */}
         <div className="text-center mb-12">
-          <span className="inline-block text-xs font-semibold uppercase tracking-wider text-brand-blue bg-brand-blue-light px-3 py-1 rounded-full mb-3">
-            Our Service Areas
-          </span>
+
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-brand-text">
             Driving School Near You — Serving All of Coimbatore
           </h2>
