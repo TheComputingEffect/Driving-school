@@ -10,7 +10,7 @@ import ServicesSection from "@/components/sections/ServicesSection";
 import HowItWorks from "@/components/sections/HowItWorks";
 import LocationsGrid from "@/components/sections/LocationsGrid";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import LearningPathSection from "@/components/sections/LearningPathSection";
+import LearningJourney from "@/components/LearningJourney/LearningJourney";
 import CourseWheelSection from "@/components/sections/CourseWheelSection";
 import HomeLocations from "@/components/sections/HomeLocations";
 
@@ -42,7 +42,7 @@ export default function Home() {
       <TrustStats />
 
       {/* NEW SECTION - LEARNING PATH */}
-      <LearningPathSection />
+      <LearningJourney />
 
       {/* SECTION 3 - WHY CHOOSE US */}
       <WhyChooseUs />
