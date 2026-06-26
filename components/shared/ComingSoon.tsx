@@ -19,22 +19,7 @@ export default function ComingSoon({
   return (
     <div className="bg-brand-bg py-20 px-4 sm:px-6 lg:px-8 min-h-[70vh] flex flex-col justify-center">
       <div className="max-w-2xl mx-auto text-center">
-        {/* Navigation Breadcrumbs */}
-        {breadcrumbs.length > 0 && (
-          <nav className="flex justify-center items-center gap-2 text-sm text-brand-muted mb-8" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-brand-blue transition-colors">Home</Link>
-            {breadcrumbs.map((crumb, idx) => (
-              <React.Fragment key={idx}>
-                <span>/</span>
-                {idx === breadcrumbs.length - 1 ? (
-                  <span className="text-brand-text font-medium truncate max-w-[150px]">{crumb.name}</span>
-                ) : (
-                  <Link href={crumb.url} className="hover:text-brand-blue transition-colors truncate max-w-[150px]">{crumb.name}</Link>
-                )}
-              </React.Fragment>
-            ))}
-          </nav>
-        )}
+        {/* Navigation Breadcrumbs removed as per request */}
 
         <span className="inline-block text-xs font-bold uppercase tracking-wider text-brand-red bg-brand-red-light px-3 py-1 rounded-full mb-4">
           Services Expanding
