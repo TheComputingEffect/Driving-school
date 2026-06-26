@@ -13,7 +13,6 @@ export default function MapSection() {
     <section className="bg-[#F8FAFC] py-16 md:py-24 border-b border-brand-border">
       <div className="max-w-[1200px] mx-auto px-4 md:px-6">
         <SectionHeader
-          badge="Find Us Near You"
           title="Our Training Locations &amp; Branches"
           subtitle="Visit our RTO-approved training academy branches in Coimbatore. Learn in real road environments under professional guidance."
         />

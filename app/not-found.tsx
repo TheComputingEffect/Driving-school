@@ -33,11 +33,7 @@ export default function NotFound() {
                 &rarr; Home Directory (Explore all details)
               </Link>
             </li>
-            <li>
-              <Link href="/courses" className="hover:underline flex items-center gap-1.5">
-                &rarr; Driving Courses (Ladies batches &amp; manuals)
-              </Link>
-            </li>
+
             <li>
               <Link href="/locations" className="hover:underline flex items-center gap-1.5">
                 &rarr; Areas Served (Find locations near you)

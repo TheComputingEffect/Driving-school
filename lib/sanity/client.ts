@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // In phase 5, this will import { createClient } from "@sanity/client"
 // For now, we mock the client to safely return content for sitemaps and blog listings.
 import { faqs } from "@/content/faq";

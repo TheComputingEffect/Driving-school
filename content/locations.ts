@@ -10,16 +10,16 @@ export const locations: LocationItem[] = [
   {
     name: "Kovaipudur",
     slug: "kovaipudur",
-    description: "Our main branch and premium driving training hub. Providing structured car driving lessons and ladies trainers across the calm avenues of Kovaipudur, Coimbatore.",
+    description: "Our main branch and premium driving training hub. Providing structured car driving lessons and lady trainers across the calm avenues of Kovaipudur, Coimbatore.",
     isPrimaryBranch: true,
-    nearAreas: ["Perur", "Kuniamuthur", "Sundarapuram", "Ukkadam"]
+    nearAreas: ["Perur", "Kuniamuthur", "Sundarapuram", "Ukkadam", "Madukkarai", "Palakkad Road", "Sugunapuram", "BK Pudur"]
   },
   {
     name: "Sivananda Colony",
     slug: "sivananda-colony",
     description: "Our second branch catering to Tatabad, Gandhipuram, and Central Coimbatore. Specially designed for city traffic navigation and bumper-to-bumper driving mastery.",
     isPrimaryBranch: true,
-    nearAreas: ["Gandhipuram", "RS Puram", "Saibaba Colony", "Race Course"]
+    nearAreas: ["Gandhipuram", "RS Puram", "Saibaba Colony", "Race Course", "Tatabad", "Cross Cut Road", "100 Feet Road", "Rathinapuri"]
   },
   {
     name: "Kuniamuthur",

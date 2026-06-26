@@ -6,14 +6,13 @@ import HeroSection from "@/components/sections/HeroSection";
 import MarqueeSection from "@/components/sections/MarqueeSection";
 import TrustStats from "@/components/sections/TrustStats";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
-import CoursesSection from "@/components/sections/CoursesSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import HowItWorks from "@/components/sections/HowItWorks";
 import LocationsGrid from "@/components/sections/LocationsGrid";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import FAQSection from "@/components/sections/FAQSection";
-import MapSection from "@/components/sections/MapSection";
-import ContactSection from "@/components/sections/ContactSection";
+import LearningJourney from "@/components/LearningJourney/LearningJourney";
+import CourseWheelSection from "@/components/sections/CourseWheelSection";
+import HomeLocations from "@/components/sections/HomeLocations";
 
 // Static metadata conforming to Next.js metadata guidelines
 export const metadata = constructMetadata({
@@ -42,11 +41,15 @@ export default function Home() {
       {/* SECTION 2 - TRUST STATISTICS */}
       <TrustStats />
 
+      {/* NEW SECTION - LEARNING PATH */}
+      <LearningJourney />
+
       {/* SECTION 3 - WHY CHOOSE US */}
       <WhyChooseUs />
 
-      {/* SECTION 4 - COURSES */}
-      <CoursesSection />
+      {/* NEW SECTION - COURSES WHEEL */}
+      <CourseWheelSection />
+
 
       {/* SECTION 5 - SERVICES */}
       <ServicesSection />
@@ -54,20 +57,11 @@ export default function Home() {
       {/* SECTION 6 - HOW IT WORKS */}
       <HowItWorks />
 
-      {/* SECTION 7 - LOCATIONS WE SERVE */}
-      <LocationsGrid />
-
       {/* SECTION 8 - TESTIMONIALS */}
       <TestimonialsSection />
 
-      {/* SECTION 9 - FAQ */}
-      <FAQSection />
-
-      {/* SECTION 10 - GOOGLE MAP */}
-      <MapSection />
-
-      {/* SECTION 11 - CONTACT */}
-      <ContactSection />
+      {/* NEW SECTION - HOME LOCATIONS */}
+      <HomeLocations />
     </div>
   );
 }
