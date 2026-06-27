@@ -28,7 +28,7 @@ export default function HeroSection({ className = "" }: { className?: string }) 
   };
 
   return (
-    <section className={`bg-gradient-to-b from-[#FAFAFA] to-[#F5F7FA] py-12 md:py-20 flex items-center overflow-hidden border-b border-brand-border ${className}`}>
+    <section className={`bg-gradient-to-b from-[#FAFAFA] to-[#F5F7FA] pt-6 pb-10 md:pt-8 md:pb-14 flex items-center overflow-hidden border-b border-brand-border ${className}`}>
       <div className="w-full max-w-[1200px] mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left text content */}
         <motion.div
