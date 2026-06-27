@@ -32,9 +32,9 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* TOP VIEWPORT CONTAINER: Hero + Marquee */}
-      <div className="flex flex-col lg:min-h-[calc(100vh-80px)] w-full">
+      <div className="flex flex-col w-full">
         {/* SECTION 1 - HERO */}
-        <HeroSection className="flex-1" />
+        <HeroSection />
 
         {/* NEW SECTION - PREMIUM MARQUEE */}
         <MarqueeSection />
