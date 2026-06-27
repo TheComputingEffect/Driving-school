@@ -23,7 +23,7 @@ export const testimonials: TestimonialItem[] = [
     name: "Senthil Kumar",
     location: "Sivananda Colony, Coimbatore",
     rating: 5,
-    text: "Excellent training program. They didn't just teach me how to pass the RTO driving test, but also how to handle highway driving, defensive driving, and parallel parking. The pick-up and drop service was very convenient.",
+    text: "Excellent training program. They didn't just teach me how to pass the RTO driving test, but also how to handle highway driving, defensive driving, and parallel parking. The instructors were very professional.",
     source: "Google Reviews",
     date: "2026-05-02"
   },
@@ -50,7 +50,7 @@ export const testimonials: TestimonialItem[] = [
     name: "Deepa Ramakrishnan",
     location: "Sundarapuram, Coimbatore",
     rating: 5,
-    text: "Highly recommended for students! I took their manual car package. The pickup and drop from my college was helpful, and the student discount made it very affordable. The dual-control cars were in clean, brand-new condition.",
+    text: "Highly recommended for students! I took their manual car package. The student discount made it very affordable. The dual-control cars were in clean, brand-new condition.",
     source: "Google Reviews",
     date: "2026-06-10"
   }

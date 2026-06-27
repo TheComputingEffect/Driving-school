@@ -64,8 +64,8 @@ export const contactInfo: ContactInfoType = {
       latitude: 10.9348,
       longitude: 76.9288,
       mapUrl: "https://maps.google.com/?q=K.Priyadharshini+Driving+School+Kovaipudur+Coimbatore",
-      mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.9463943033575!2d76.9266113!3d10.9348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8596b!2sKovaipudur%2C%20Coimbatore!5e0!3m2!1sen!2sin!4v1700000000000",
-      phone: "+919842212345"
+      mapEmbedUrl: "https://maps.google.com/maps?q=10.9348,76.9288&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      phone: "+919843407878"
     },
     branch2: {
       name: "Branch 2 (Sivananda Colony)",
@@ -77,8 +77,8 @@ export const contactInfo: ContactInfoType = {
       latitude: 11.0264,
       longitude: 76.9628,
       mapUrl: "https://maps.google.com/?q=K.Priyadharshini+Driving+School+Sivananda+Colony+Coimbatore",
-      mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.2758129037!2d76.9606!3d11.0264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859ab!2sSivananda%20Colony%2C%20Coimbatore!5e0!3m2!1sen!2sin!4v1700000000001",
-      phone: "+919842212345"
+      mapEmbedUrl: "https://maps.google.com/maps?q=11.0264,76.9628&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      phone: "+919345145678"
     }
   },
   socialLinks: {

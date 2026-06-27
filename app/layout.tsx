@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | K. Priyadharshini Driving School",
   },
   description:
-    "Learn driving with expert instructors in Coimbatore. Certified ladies training, pickup and drop services, student discounts, and flexible hours. Serving Kovaipudur & Sivananda Colony.",
+    "Learn driving with expert instructors in Coimbatore. Certified ladies training, student discounts, and flexible hours. Serving Kovaipudur & Sivananda Colony.",
 };
 
 export default function RootLayout({

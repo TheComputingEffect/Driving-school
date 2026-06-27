@@ -18,10 +18,6 @@ export default function LocationsPage() {
     <div className="flex-1 bg-brand-bg pb-12">
       <BreadcrumbSchema items={crumbs} />
 
-
-
-
-
       {/* Map Section */}
       <MapSection />
     </div>

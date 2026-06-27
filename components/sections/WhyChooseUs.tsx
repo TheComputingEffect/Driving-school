@@ -26,8 +26,8 @@ export default function WhyChooseUs() {
     },
     {
       icon: MapPin,
-      title: "Pickup & Drop Facility",
-      description: "Convenient door-to-door pickup and drop services across your home or college in Coimbatore."
+      title: "Flexible Batches",
+      description: "We offer flexible morning and evening batches that fit perfectly into your busy schedule."
     },
     {
       icon: Clock,
@@ -67,7 +67,6 @@ export default function WhyChooseUs() {
     <section className="bg-white py-16 md:py-24 border-b border-brand-border">
       <div className="max-w-[1200px] mx-auto px-4 md:px-6">
         <SectionHeader
-          badge="Why Choose Us"
           title="The Most Trusted Driving Academy in Coimbatore"
           subtitle="We combine decade-long teaching expertise with flexible learning routines to deliver a premium driving education experience."
         />

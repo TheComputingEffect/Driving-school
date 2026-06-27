@@ -2,77 +2,127 @@
 
 import React from "react";
 import { motion, MotionValue } from "framer-motion";
+import { ROAD_PATH } from "./roadPath";
 
 interface RoadSVGProps {
   progress: MotionValue<number>;
 }
 
 export default function RoadSVG({ progress }: RoadSVGProps) {
-  // A clean, continuous winding path spanning 4000 units vertically.
-  const roadPath = `
-    M 600 100
-    C 200 400, 200 800, 600 1100
-    S 1000 1700, 600 2000
-    S 200 2600, 600 2900
-    S 1000 3500, 600 3800
-    S 600 3900, 600 4000
-  `;
+  const roadPath = ROAD_PATH;
+
+  const pinnedMarkers = [
+    { id: 1, cx: 1120, cy: 250 },
+    { id: 3, cx: 1120, cy: 1000 },
+    { id: 2, cx: 1120, cy: 1750 },
+    { id: 4, cx: 80, cy: 250 },
+    { id: 5, cx: 80, cy: 1000 },
+    { id: 6, cx: 80, cy: 1750 },
+  ];
 
   return (
     <div className="absolute inset-0 w-full h-full pointer-events-none z-[1] flex justify-center">
       <svg
-        viewBox="0 0 1200 4000"
+        viewBox="0 0 1200 2000"
         preserveAspectRatio="xMidYMid meet"
         className="w-full h-full max-w-[1200px]"
       >
         <defs>
           <filter id="shadow-road" x="-20%" y="-20%" width="140%" height="140%">
-            <feDropShadow dx="0" dy="12" stdDeviation="16" floodOpacity="0.15" />
+            <feDropShadow dx="0" dy="12" stdDeviation="16" floodOpacity="0.2" />
           </filter>
         </defs>
 
-        {/* Road Base (Shadow) */}
+        {/* 1. Shadow */}
         <path
           d={roadPath}
-          stroke="rgba(0,0,0,0.08)"
-          strokeWidth="84"
+          stroke="#00000020"
+          strokeWidth="140"
           fill="none"
           strokeLinecap="round"
           filter="url(#shadow-road)"
           className="translate-y-2"
         />
 
-        {/* Road Surface (Dark Gray) */}
+        {/* 2. Kerb/shoulder */}
         <path
           d={roadPath}
-          stroke="#1e293b" // slate-800
-          strokeWidth="80"
+          stroke="#94a3b8"
+          strokeWidth="130"
           fill="none"
           strokeLinecap="round"
         />
 
-        {/* Completed Road Highlight (Brand Red) */}
-        <motion.path
+        {/* 3. Asphalt */}
+        <path
           d={roadPath}
-          stroke="#ef4444" // red-500
-          strokeWidth="80"
+          stroke="#1e293b"
+          strokeWidth="118"
           fill="none"
           strokeLinecap="round"
-          style={{ pathLength: progress }}
-          className="opacity-90"
         />
 
-        {/* Center Dashed Line */}
+        {/* 4. Lane edge lines LEFT */}
+        <path
+          d={roadPath}
+          stroke="#f59e0b"
+          strokeWidth="4"
+          fill="none"
+          strokeLinecap="round"
+          transform="translate(-59, 0)"
+        />
+
+        {/* 5. Lane edge lines RIGHT */}
+        <path
+          d={roadPath}
+          stroke="#f59e0b"
+          strokeWidth="4"
+          fill="none"
+          strokeLinecap="round"
+          transform="translate(59, 0)"
+        />
+
+        {/* 6. Center dashes */}
         <path
           id="road-path"
           d={roadPath}
-          stroke="#ffffff"
-          strokeWidth="6"
-          strokeDasharray="32 32"
+          stroke="white"
+          strokeWidth="5"
+          strokeDasharray="40 30"
           fill="none"
           strokeLinecap="round"
-          className="opacity-80"
         />
+
+        {/* 7. Progress fill */}
+        <motion.path
+          d={roadPath}
+          stroke="#ef4444"
+          strokeWidth="118"
+          fill="none"
+          strokeLinecap="round"
+          style={{ pathLength: progress }}
+          opacity="0.85"
+        />
+
+        {/* 8. Pinned Markers */}
+        {pinnedMarkers.map((marker) => (
+          <g key={marker.id} className="z-[30]">
+            <circle cx={marker.cx} cy={marker.cy} r="36" fill="#1e293b" stroke="#ffffff" strokeWidth="6" />
+            <circle cx={marker.cx} cy={marker.cy} r="28" fill="#ffffff" />
+            <text
+              x={marker.cx}
+              y={marker.cy}
+              textAnchor="middle"
+              dominantBaseline="central"
+              fill="#1e293b"
+              fontSize="32"
+              fontWeight="900"
+              fontFamily="sans-serif"
+            >
+              {marker.id}
+            </text>
+          </g>
+        ))}
       </svg>
     </div>
   );

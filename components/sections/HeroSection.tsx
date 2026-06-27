@@ -7,7 +7,7 @@ import { Calendar, Star, Shield, MapPin, Phone } from "lucide-react";
 import { contactInfo } from "@/content/contactInfo";
 import DemoModal from "../shared/DemoModal";
 
-export default function HeroSection() {
+export default function HeroSection({ className = "" }: { className?: string }) {
   const [isDemoModalOpen, setIsDemoModalOpen] = React.useState(false);
 
   const containerVariants: any = {
@@ -28,8 +28,8 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-[#FAFAFA] to-[#F5F7FA] pt-2 pb-6 md:pt-4 md:pb-12 overflow-hidden border-b border-brand-border">
-      <div className="max-w-[1200px] mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+    <section className={`bg-gradient-to-b from-[#FAFAFA] to-[#F5F7FA] py-12 md:py-20 flex items-center overflow-hidden border-b border-brand-border ${className}`}>
+      <div className="w-full max-w-[1200px] mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left text content */}
         <motion.div
           variants={containerVariants}
@@ -50,13 +50,12 @@ export default function HeroSection() {
             </span>
           </motion.div>
 
-
           {/* Heading with embedded keywords */}
           <motion.h1
             variants={itemVariants}
             className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-brand-text leading-[1.1] font-heading"
           >
-            Learn Driving with <span className="text-brand-red">Confidence</span> in Coimbatore
+            Best <span className="text-brand-red">Driving School</span> in Coimbatore
           </motion.h1>
 
           {/* Subheading with naturally embedded locations */}
@@ -64,7 +63,7 @@ export default function HeroSection() {
             variants={itemVariants}
             className="text-lg text-brand-muted font-normal leading-relaxed max-w-xl"
           >
-            Expert instructors. Dual-control safe vehicles. Ladies special training by certified female coaches. Flexible morning and weekend batches with home pickup. Servicing <span className="text-brand-text font-semibold">Kovaipudur</span>, <span className="text-brand-text font-semibold">Sivananda Colony</span>, and all major areas.
+            Expert instructors. Dual-control safe vehicles. Ladies special training by certified female coaches. Flexible morning and weekend batches. Servicing <span className="text-brand-text font-semibold">Kovaipudur</span>, <span className="text-brand-text font-semibold">Sivananda Colony</span>, and all major areas.
           </motion.p>
 
           {/* Mini Stats Grid */}
@@ -138,7 +137,7 @@ export default function HeroSection() {
             <div className="w-6 h-6 rounded-lg bg-brand-blue-light flex items-center justify-center">
               <MapPin className="w-3.5 h-3.5 text-brand-blue" />
             </div>
-            <span className="text-[10px] font-bold text-brand-text">Pickup Available</span>
+            <span className="text-[10px] font-bold text-brand-text">Top Rated</span>
           </div>
 
           {/* Floating Card 3: Weekend Classes */}

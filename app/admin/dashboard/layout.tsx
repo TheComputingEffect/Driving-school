@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { LogOut, Image as ImageIcon, Video, Home, Menu, X } from "lucide-react";
+import { LogOut, Image as ImageIcon, Video, Home, Menu, X, MessageSquare } from "lucide-react";
 
 export default function AdminDashboardLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -24,6 +24,7 @@ export default function AdminDashboardLayout({ children }: { children: React.Rea
   };
 
   const navItems = [
+    { name: "Form Submissions", href: "/admin/dashboard/submissions", icon: MessageSquare },
     { name: "Gallery Manager", href: "/admin/dashboard/gallery", icon: ImageIcon },
   ];
 

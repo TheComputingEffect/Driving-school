@@ -104,19 +104,19 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <span className="text-gray-400 hover:text-white hover:translate-x-1 inline-block transition-all cursor-pointer">
+                <Link href="/services/driving-licence" className="text-gray-400 hover:text-white hover:translate-x-1 inline-block transition-all">
                   Lady Trainers
-                </span>
+                </Link>
               </li>
               <li>
-                <Link href="/services/licence-renewal" className="text-gray-400 hover:text-white hover:translate-x-1 inline-block transition-all">
+                <Link href="/services/rto-services" className="text-gray-400 hover:text-white hover:translate-x-1 inline-block transition-all">
                   RTO Assistance
                 </Link>
               </li>
               <li>
-                <span className="text-gray-400 hover:text-white hover:translate-x-1 inline-block transition-all cursor-pointer">
+                <Link href="/services/licence-renewal" className="text-gray-400 hover:text-white hover:translate-x-1 inline-block transition-all">
                   License Renewal
-                </span>
+                </Link>
               </li>
             </ul>
           </div>
@@ -136,15 +136,22 @@ export default function Footer() {
                   <span itemProp="streetAddress">{contactInfo.branches.main.address}</span>
                 </div>
               </li>
-              <li className="flex gap-3 items-center group">
-                <Phone className="w-5 h-5 text-brand-red shrink-0 group-hover:scale-110 transition-transform" />
-                <a 
-                  href={`tel:${contactInfo.phone}`} 
-                  className="text-gray-400 hover:text-white transition-colors"
-                  itemProp="telephone"
-                >
-                  {contactInfo.phoneFormatted}
-                </a>
+              <li className="flex gap-3 items-start group">
+                <Phone className="w-5 h-5 text-brand-red shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                <div className="flex flex-col gap-1">
+                  <a 
+                    href={`tel:${contactInfo.branches.main.phone}`} 
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    +91 98434 07878 <span className="text-gray-500 text-xs ml-1">(Kovaipudur)</span>
+                  </a>
+                  <a 
+                    href={`tel:${contactInfo.branches.branch2.phone}`} 
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    +91 93451 45678 <span className="text-gray-500 text-xs ml-1">(Sivananda Colony)</span>
+                  </a>
+                </div>
               </li>
               <li className="flex gap-3 items-center group">
                 <Mail className="w-5 h-5 text-brand-red shrink-0 group-hover:scale-110 transition-transform" />
@@ -170,8 +177,9 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-          <div>
-            © {currentYear} K. Priyadharshini Driving School. All rights reserved.
+          <div className="flex flex-col items-center md:items-start gap-1">
+            <span>© {currentYear} K. Priyadharshini Driving School. All rights reserved.</span>
+            <span className="text-gray-600">Designed & Developed by The Computing Effect</span>
           </div>
           <div className="flex space-x-6">
             <Link href="/about" className="hover:text-white transition-colors">Privacy Policy</Link>
