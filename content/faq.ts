@@ -11,11 +11,6 @@ export const faqs: FAQItem[] = [
     answer: "Our driving classes in Coimbatore start from a highly competitive rate, with customized plans starting from ₹2,500 depending on the selected package (manual, automatic, or ladies-only). We offer special discounts for students, group bookings, and corporate packages. Contact us for a precise custom quote!"
   },
   {
-    id: "faq-2",
-    question: "Do you provide pickup and drop service?",
-    answer: "Yes, we offer doorstep pickup and drop-off services across all major areas in Coimbatore, including Kovaipudur, Sivananda Colony, Kuniamuthur, Sundarapuram, RS Puram, and Gandhipuram. This ensures maximum convenience for professionals, students, and home makers."
-  },
-  {
     id: "faq-3",
     question: "Do you have dedicated lady trainers?",
     answer: "Absolutely! We specialize in ladies driving classes in Coimbatore. Female students are trained exclusively by our certified, highly experienced female instructors in a safe, supportive, and comfortable environment."

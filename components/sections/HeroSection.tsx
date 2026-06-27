@@ -64,7 +64,7 @@ export default function HeroSection() {
             variants={itemVariants}
             className="text-lg text-brand-muted font-normal leading-relaxed max-w-xl"
           >
-            Expert instructors. Dual-control safe vehicles. Ladies special training by certified female coaches. Flexible morning and weekend batches with home pickup. Servicing <span className="text-brand-text font-semibold">Kovaipudur</span>, <span className="text-brand-text font-semibold">Sivananda Colony</span>, and all major areas.
+            Expert instructors. Dual-control safe vehicles. Ladies special training by certified female coaches. Flexible morning and weekend batches. Servicing <span className="text-brand-text font-semibold">Kovaipudur</span>, <span className="text-brand-text font-semibold">Sivananda Colony</span>, and all major areas.
           </motion.p>
 
           {/* Mini Stats Grid */}
@@ -138,7 +138,7 @@ export default function HeroSection() {
             <div className="w-6 h-6 rounded-lg bg-brand-blue-light flex items-center justify-center">
               <MapPin className="w-3.5 h-3.5 text-brand-blue" />
             </div>
-            <span className="text-[10px] font-bold text-brand-text">Pickup Available</span>
+            <span className="text-[10px] font-bold text-brand-text">Top Rated</span>
           </div>
 
           {/* Floating Card 3: Weekend Classes */}

@@ -26,8 +26,8 @@ export default function WhyChooseUs() {
     },
     {
       icon: MapPin,
-      title: "Pickup & Drop Facility",
-      description: "Convenient door-to-door pickup and drop services across your home or college in Coimbatore."
+      title: "Flexible Batches",
+      description: "We offer flexible morning and evening batches that fit perfectly into your busy schedule."
     },
     {
       icon: Clock,

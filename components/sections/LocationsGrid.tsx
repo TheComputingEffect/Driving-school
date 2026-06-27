@@ -34,7 +34,7 @@ export default function LocationsGrid() {
             Driving School Near You — Serving All of Coimbatore
           </h2>
           <p className="mt-4 text-lg text-brand-muted font-normal max-w-2xl mx-auto leading-relaxed">
-            We provide convenient dual-control driving coaching with home pick-up and drop-off spanning all neighborhoods in Coimbatore.
+            We provide convenient dual-control driving coaching spanning all neighborhoods in Coimbatore.
           </p>
         </div>
 

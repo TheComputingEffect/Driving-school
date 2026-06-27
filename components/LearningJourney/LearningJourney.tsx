@@ -7,7 +7,7 @@ import { useReducedMotion } from "framer-motion";
 import RoadSVG from "./RoadSVG";
 import MovingCar from "./MovingCar";
 import JourneyCard from "./JourneyCard";
-import { useScrollProgress } from "./useScrollProgress";
+import { useAutoProgress } from "./useAutoProgress";
 
 const steps = [
   { id: 1, title: "Theory & Traffic Rules", description: "Learn road safety, signs, and vehicle mechanics.", icon: BookOpen, color: "bg-blue-500", lightColor: "bg-blue-100", textColor: "text-blue-500" },
@@ -19,13 +19,14 @@ const steps = [
 ];
 
 // 3 explicit rows mapped to the 6 phases.
-const rowTops = ["15%", "15%", "40%", "40%", "65%", "65%"];
+const rowTops = ["4%", "15%", "40%", "48%", "83%", "83%"];
 // Stagger checkpoints slightly so they reveal sequentially in their rows.
-const checkpoints = [0.12, 0.18, 0.38, 0.44, 0.62, 0.68];
+const checkpoints = [0.05, 0.15, 0.42, 0.55, 0.82, 0.92];
+const isLeftArray = [true, false, false, true, true, false];
 
 export default function LearningJourney() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const progress = useScrollProgress(containerRef);
+  const progress = useAutoProgress(containerRef);
   const shouldReduceMotion = useReducedMotion();
 
   if (shouldReduceMotion) {
@@ -33,20 +34,20 @@ export default function LearningJourney() {
   }
 
   return (
-    <section className="w-full bg-slate-50 pt-[120px] pb-[100px] overflow-visible z-[0]">
+    <section className="w-full bg-slate-50 pt-8 md:pt-12 pb-12 overflow-hidden">
       <div 
         ref={containerRef} 
-        className="relative h-[600vh] w-full"
+        className="relative w-full"
       >
-        <div className="sticky top-0 h-screen w-full flex flex-col items-center overflow-hidden">
+        <div className="relative w-full flex flex-col items-center overflow-hidden" style={{ minHeight: '100vh' }}>
           
           {/* Header Area */}
-          <div className="z-[30] w-full text-center px-4 pt-8 md:pt-12 shrink-0 h-[100px] md:h-[140px]">
+          <div className="z-[30] w-full text-center px-4 pt-4 shrink-0 h-[80px] md:h-[100px]">
             <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight font-heading">
               Your <span className="text-red-500">Learning Journey</span>
             </h2>
             <p className="mt-2 text-gray-500 max-w-2xl mx-auto text-sm md:text-base hidden md:block">
-              Scroll down to travel through your complete path to becoming a confident driver.
+              Watch your journey unfold.
             </p>
           </div>
 
@@ -54,7 +55,7 @@ export default function LearningJourney() {
           <div className="relative w-full flex-1 flex flex-col md:block">
             
             {/* The SVG Road (Layer 1) and Car (Layer 20) */}
-            <div className="relative w-full h-[40vh] md:absolute md:inset-0 md:h-full z-[1]">
+            <div className="relative w-full h-[50vh] md:absolute md:inset-0 md:h-full z-[1]">
                <RoadSVG progress={progress} />
                <div className="absolute inset-0 z-[20] pointer-events-none">
                  <MovingCar progress={progress} />
@@ -69,22 +70,10 @@ export default function LearningJourney() {
                     step={step} 
                     checkpoint={checkpoints[idx]} 
                     progress={progress}
-                    isLeft={idx % 2 === 0} 
+                    isLeft={isLeftArray[idx]} 
                     rowTop={rowTops[idx]}
                   />
                 ))}
-            </div>
-
-            {/* Finish Flag & Minimal Text Area (Layer 25) */}
-            {/* Exactly at the bottom, very clean and minimal */}
-            <div className="absolute bottom-[5%] left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-100 z-[25] bg-white/70 backdrop-blur-sm p-4 rounded-3xl border border-gray-100 shadow-sm pointer-events-none">
-              <div className="flex items-center gap-2 text-gray-900 font-extrabold text-lg md:text-xl tracking-tight mb-1">
-                <Flag className="w-5 h-5 text-red-500" />
-                Journey Completed
-              </div>
-              <p className="text-gray-500 font-medium text-xs md:text-sm uppercase tracking-widest">
-                Become a Confident Driver
-              </p>
             </div>
 
           </div>

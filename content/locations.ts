@@ -24,7 +24,7 @@ export const locations: LocationItem[] = [
   {
     name: "Kuniamuthur",
     slug: "kuniamuthur",
-    description: "Serving students and residents in Kuniamuthur with flexible timing schedules. Doorstep pickup and drop-off facility are fully active in this zone.",
+    description: "Serving students and residents in Kuniamuthur with flexible timing schedules. Contact us to find a batch that works for you.",
     isPrimaryBranch: false,
     nearAreas: ["Kovaipudur", "Sundarapuram", "Ukkadam", "Podanur"]
   },

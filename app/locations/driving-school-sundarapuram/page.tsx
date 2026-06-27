@@ -59,7 +59,7 @@ export default function SundarapuramLocationPage() {
             </h1>
             
             <p className="text-lg text-brand-muted leading-relaxed">
-              Looking for a professional driving school in Sundarapuram? We offer premium manual and automatic car training packages with certified male and female coaches. Home pickup and drop services are fully functional in this sector.
+              Looking for a professional driving school in Sundarapuram? We offer premium manual and automatic car training packages with certified male and female coaches. 
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">
@@ -108,7 +108,7 @@ export default function SundarapuramLocationPage() {
               Structured Practical Curriculum &amp; RTO Assistance
             </h2>
             <p className="text-sm text-brand-muted leading-relaxed">
-              We make learning to drive highly convenient for students and professionals in Sundarapuram. Our instructors pick you up directly from your doorstep, drive to our dedicated training ground in Kovaipudur, guide you through structured learning modules, and drop you back.
+              We make learning to drive highly convenient for students and professionals in Sundarapuram. Our instructors guide you through structured learning modules at our dedicated training ground in Kovaipudur.
             </p>
             <p className="text-sm text-brand-muted leading-relaxed">
               We specialize in ladies driving classes in Sundarapuram, featuring patient female coaches and dual-control cars to build safe driving habits.

@@ -28,7 +28,7 @@ export default function KovaipudurLocationPage() {
     {
       id: "kovai-faq-1",
       question: "Where is your driving school located in Kovaipudur?",
-      answer: "Our main branch is located at 24/A, Main Road, Kovaipudur, Coimbatore. We are situated in a highly accessible zone and offer home pickup services."
+      answer: "Our main branch is located at 24/A, Main Road, Kovaipudur, Coimbatore. We are situated in a highly accessible zone ."
     },
     {
       id: "kovai-faq-2",

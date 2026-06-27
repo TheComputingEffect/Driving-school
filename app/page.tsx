@@ -18,7 +18,7 @@ import HomeLocations from "@/components/sections/HomeLocations";
 export const metadata = constructMetadata({
   title: "Best Driving School in Coimbatore | K. Priyadharshini Driving School",
   description:
-    "Learn driving from expert instructors in Coimbatore. Ladies driving classes, licence services, pickup & drop, student discounts, flexible schedules. Serving Kovaipudur, Sivananda Colony & all of Coimbatore.",
+    "Learn driving from expert instructors in Coimbatore. Ladies driving classes, licence services, student discounts, flexible schedules. Serving Kovaipudur, Sivananda Colony & all of Coimbatore.",
   path: "/",
   keywords: [
     "Driving School Coimbatore",

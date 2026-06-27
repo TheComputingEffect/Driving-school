@@ -64,7 +64,7 @@ export const courses: CourseItem[] = [
       "1-on-1 Female Instructor",
       "Safe, Comfortable Environment",
       "Flexible Timing Slots",
-      "Doorstep Pickup & Drop"
+      "Highway driving exposure"
     ]
   },
   {

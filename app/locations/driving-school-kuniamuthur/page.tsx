@@ -12,7 +12,7 @@ import { contactInfo } from "@/content/contactInfo";
 export const metadata = constructMetadata({
   title: "Driving School in Kuniamuthur, Coimbatore | K. Priyadharshini",
   description:
-    "Looking for a driving school in Kuniamuthur? K. Priyadharshini Driving School offers expert training, ladies classes, and pickup/drop in Kuniamuthur.",
+    "Looking for a driving school in Kuniamuthur? K. Priyadharshini Driving School offers expert training, ladies classes, and expert classes in Kuniamuthur.",
   path: "/locations/driving-school-kuniamuthur",
   keywords: ["Driving School Kuniamuthur", "Best Driving Class Kuniamuthur", "Driving School Kuniamuthur Coimbatore"],
 });
@@ -59,7 +59,7 @@ export default function KuniamuthurLocationPage() {
             </h1>
             
             <p className="text-lg text-brand-muted leading-relaxed">
-              Looking for a professional driving school in Kuniamuthur? We offer doorstep pickup and drop services for all residents and college students in Kuniamuthur. Learn driving on dual-control hatchback and sedan cars with certified male and female tutors.
+              Looking for a professional driving school in Kuniamuthur?  Learn driving on dual-control hatchback and sedan cars with certified male and female tutors.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">
@@ -105,10 +105,10 @@ export default function KuniamuthurLocationPage() {
         <div className="lg:col-span-8 space-y-8">
           <div className="bg-white border border-brand-border rounded-2xl p-6 md:p-8 space-y-4">
             <h2 className="text-2xl font-bold text-brand-text font-heading">
-              Doorstep Pickup &amp; Safe Training Batches
+              Safe Training Batches
             </h2>
             <p className="text-sm text-brand-muted leading-relaxed">
-              We make learning to drive highly convenient for students and professionals in Kuniamuthur. Our instructors pick you up directly from your doorstep, drive to our dedicated training ground in Kovaipudur, guide you through structured learning modules, and drop you back.
+              We make learning to drive highly convenient for students and professionals in Kuniamuthur. Our instructors guide you through structured learning modules at our dedicated training ground in Kovaipudur.
             </p>
             <p className="text-sm text-brand-muted leading-relaxed">
               We specialize in ladies driving classes in Kuniamuthur, featuring patient female coaches and dual-control cars to build safe driving habits.

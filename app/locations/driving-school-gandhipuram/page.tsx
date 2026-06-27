@@ -59,7 +59,7 @@ export default function GandhipuramLocationPage() {
             </h1>
             
             <p className="text-lg text-brand-muted leading-relaxed">
-              Looking for a professional driving school in Gandhipuram? We offer premium manual and automatic driving courses with certified instructors. Learn safety techniques, parallel parking grid mastery, and city traffic navigation. Pickup and drop facilities are fully available.
+              Looking for a professional driving school in Gandhipuram? We offer premium manual and automatic driving courses with certified instructors. Learn safety techniques, parallel parking grid mastery, and city traffic navigation. 
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">
@@ -108,7 +108,7 @@ export default function GandhipuramLocationPage() {
               Peak Traffic Steering &amp; RTO Filings Assistance
             </h2>
             <p className="text-sm text-brand-muted leading-relaxed">
-              We make learning to drive highly convenient for students and professionals in Gandhipuram. Our instructors pick you up directly from your doorstep, drive to our dedicated training ground in Kovaipudur, guide you through structured learning modules, and drop you back.
+              We make learning to drive highly convenient for students and professionals in Gandhipuram. Our instructors guide you through structured learning modules at our dedicated training ground in Kovaipudur.
             </p>
             <p className="text-sm text-brand-muted leading-relaxed">
               We specialize in ladies driving classes in Gandhipuram, featuring patient female coaches and dual-control cars to build safe driving habits.
