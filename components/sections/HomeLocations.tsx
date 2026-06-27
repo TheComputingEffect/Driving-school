@@ -215,29 +215,29 @@ export default function HomeLocations() {
                     transition={{ repeat: isActive ? Infinity : 0, duration: 2, ease: "easeInOut" }}
                     className="relative flex flex-col items-center"
                   >
-                    {/* Ping animation */}
-                    {!isActive && (
+                    {/* Active Glow/Ping animation */}
+                    {isActive && (
                       <span className="absolute flex h-full w-full top-0 left-0">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-40"></span>
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-60"></span>
                       </span>
                     )}
 
                     <div className={`p-2.5 rounded-full shadow-lg border-2 transition-all duration-300 relative ${
                       isActive 
-                        ? "bg-brand-red border-white shadow-brand-red/50 scale-125 z-30" 
-                        : "bg-brand-red/90 border-brand-red hover:bg-brand-red z-20"
+                        ? "bg-brand-red border-white shadow-[0_0_20px_rgba(239,68,68,0.8)] scale-125 z-30" 
+                        : "bg-brand-red/40 border-brand-red/50 hover:bg-brand-red/70 z-20"
                     }`}>
                       <MapPin className="w-4 h-4 md:w-5 md:h-5 text-white transition-all" />
                     </div>
                     
                     {/* Pin tail */}
-                    <div className={`w-0.5 transition-all ${isActive ? "h-3 bg-white" : "h-3 bg-brand-red"}`} />
+                    <div className={`w-0.5 transition-all ${isActive ? "h-4 bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]" : "h-3 bg-brand-red/50"}`} />
                     
                     {/* Label */}
                     <div className={`absolute top-full mt-1.5 px-3 py-1.5 rounded-lg whitespace-nowrap text-xs font-bold tracking-wide transition-all duration-300 shadow-xl ${
                       isActive 
-                        ? "bg-white text-gray-900 scale-110 z-30" 
-                        : "bg-[#1E293B] border border-brand-red/50 text-white z-20"
+                        ? "bg-white text-brand-red scale-110 z-30 ring-2 ring-brand-red/20" 
+                        : "bg-[#0B1120]/80 border border-white/10 text-gray-400 z-20"
                     }`}>
                       {loc.name}
                     </div>
@@ -300,7 +300,7 @@ export default function HomeLocations() {
                 </div>
 
                 <Link 
-                  href="/locations"
+                  href={`/locations/driving-school-${activeLocation.slug}`}
                   className="w-full bg-brand-red hover:bg-red-700 text-white font-bold py-4 px-6 rounded-xl transition-all uppercase tracking-wider text-sm text-center flex items-center justify-center gap-2 group shadow-lg shadow-brand-red/20 hover:shadow-brand-red/40"
                 >
                   Explore Location Details

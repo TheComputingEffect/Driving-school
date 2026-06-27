@@ -32,30 +32,6 @@ export const services: ServiceItem[] = [
     ]
   },
   {
-    id: "service-name-change",
-    title: "Name Change on Licence",
-    description: "Get name corrections or marital name changes updated on your official government driving licence record.",
-    slug: "name-change",
-    features: [
-      "Gazette Notification Support",
-      "Affidavit Preparation Checklist",
-      "Official RTO Data Updation",
-      "New Smart Card Issuance"
-    ]
-  },
-  {
-    id: "service-address-change",
-    title: "Address Change on Licence",
-    description: "Relocating within Coimbatore or from another district? Get your new address updated on your driving licence seamlessly.",
-    slug: "address-change",
-    features: [
-      "No Objection Certificate (NOC) Handling",
-      "Address Proof Verification Assistance",
-      "Inter-State Licence Transfers",
-      "Doorstep Smart Card Delivery"
-    ]
-  },
-  {
     id: "service-vehicle-fc",
     title: "Vehicle FC Upgrade",
     description: "Get Fitness Certificates (FC) renewed for your transport or non-transport vehicles, matching all Indian government norms.",

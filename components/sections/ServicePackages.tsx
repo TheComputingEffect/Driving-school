@@ -71,7 +71,7 @@ export default function ServicePackages() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
-              className={`relative bg-white rounded-3xl p-8 border ${
+              className={`relative flex flex-col h-full bg-white rounded-3xl p-8 border ${
                 pkg.popular 
                   ? "border-brand-red shadow-2xl shadow-brand-red/10 scale-100 md:scale-105 z-10" 
                   : "border-gray-200 shadow-md"
@@ -89,7 +89,7 @@ export default function ServicePackages() {
                 <div className="text-xl font-bold text-brand-blue">{pkg.price}</div>
               </div>
 
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-4">
                 {pkg.features.map((feature, fIdx) => (
                   <li key={fIdx} className="flex items-start gap-3 text-sm font-medium text-gray-700">
                     <Check className={`w-5 h-5 shrink-0 ${pkg.popular ? "text-brand-red" : "text-brand-blue"}`} />
@@ -98,13 +98,15 @@ export default function ServicePackages() {
                 ))}
               </ul>
 
-              <CTAButton 
-                href="/contact" 
-                variant={pkg.popular ? "primary" : "outline"} 
-                className="w-full justify-center"
-              >
-                Enroll Now
-              </CTAButton>
+              <div className="mt-auto pt-8">
+                <CTAButton 
+                  href="/contact" 
+                  variant={pkg.popular ? "primary" : "outline"} 
+                  className="w-full justify-center"
+                >
+                  Enroll Now
+                </CTAButton>
+              </div>
             </motion.div>
           ))}
         </div>

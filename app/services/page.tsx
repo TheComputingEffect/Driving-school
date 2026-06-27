@@ -5,6 +5,7 @@ import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import ServicesHero from "@/components/sections/ServicesHero";
 import DetailedServices from "@/components/sections/DetailedServices";
 import ServicePackages from "@/components/sections/ServicePackages";
+import FullServicesList from "@/components/sections/FullServicesList";
 import FleetShowcase from "@/components/sections/FleetShowcase";
 
 export const metadata = constructMetadata({
@@ -30,6 +31,9 @@ export default function ServicesPage() {
 
       {/* 3. Pricing & Training Packages */}
       <ServicePackages />
+
+      {/* 4. Full RTO Services Details */}
+      <FullServicesList />
 
       {/* 5. Vehicle Fleet Showcase */}
       <FleetShowcase />

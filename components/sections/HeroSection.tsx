@@ -7,7 +7,7 @@ import { Calendar, Star, Shield, MapPin, Phone } from "lucide-react";
 import { contactInfo } from "@/content/contactInfo";
 import DemoModal from "../shared/DemoModal";
 
-export default function HeroSection() {
+export default function HeroSection({ className = "" }: { className?: string }) {
   const [isDemoModalOpen, setIsDemoModalOpen] = React.useState(false);
 
   const containerVariants: any = {
@@ -28,8 +28,8 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-[#FAFAFA] to-[#F5F7FA] pt-2 pb-6 md:pt-4 md:pb-12 overflow-hidden border-b border-brand-border">
-      <div className="max-w-[1200px] mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+    <section className={`bg-gradient-to-b from-[#FAFAFA] to-[#F5F7FA] py-12 md:py-20 flex items-center overflow-hidden border-b border-brand-border ${className}`}>
+      <div className="w-full max-w-[1200px] mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left text content */}
         <motion.div
           variants={containerVariants}
@@ -50,13 +50,12 @@ export default function HeroSection() {
             </span>
           </motion.div>
 
-
           {/* Heading with embedded keywords */}
           <motion.h1
             variants={itemVariants}
             className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-brand-text leading-[1.1] font-heading"
           >
-            Learn Driving with <span className="text-brand-red">Confidence</span> in Coimbatore
+            Best <span className="text-brand-red">Driving School</span> in Coimbatore
           </motion.h1>
 
           {/* Subheading with naturally embedded locations */}

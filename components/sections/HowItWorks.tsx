@@ -62,7 +62,6 @@ export default function HowItWorks() {
     <section className="bg-white py-16 md:py-24 border-b border-brand-border">
       <div className="max-w-[1200px] mx-auto px-4 md:px-6">
         <SectionHeader
-          badge="Learning Path"
           title="How It Works — Your Road to Licensing"
           subtitle="We make the entire journey of learning to drive and securing your licence transparent and hassle-free."
         />

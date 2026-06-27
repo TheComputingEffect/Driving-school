@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { useMotionValue, useSpring, MotionValue } from "framer-motion";
 
-const ANIMATION_DURATION = 8000; // 8 seconds total journey
+const ANIMATION_DURATION = 12000; // 12 seconds total journey
 
 export function useAutoProgress(triggerRef: React.RefObject<HTMLElement | null>): MotionValue<number> {
   const rawProgress = useMotionValue(0);

@@ -4,6 +4,7 @@ export interface LocationItem {
   description: string;
   isPrimaryBranch: boolean;
   nearAreas: string[];
+  mapUrl?: string;
 }
 
 export const locations: LocationItem[] = [

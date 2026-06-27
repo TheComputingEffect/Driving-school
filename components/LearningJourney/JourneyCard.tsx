@@ -42,11 +42,11 @@ export default function JourneyCard({
     <div
       className={`
         w-full flex justify-center mb-4 md:mb-0
-        md:absolute md:w-auto pointer-events-auto z-[10]
+        relative md:absolute md:w-[320px] pointer-events-auto z-[10]
         ${isLeft ? "md:right-[calc(50%+160px)] md:justify-end" : "md:left-[calc(50%+160px)] md:justify-start"}
       `}
       style={{
-        "--md-top": rowTop,
+        top: rowTop,
       } as React.CSSProperties}
     >
       <motion.div

@@ -6,7 +6,6 @@ import HeroSection from "@/components/sections/HeroSection";
 import MarqueeSection from "@/components/sections/MarqueeSection";
 import TrustStats from "@/components/sections/TrustStats";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
-import ServicesSection from "@/components/sections/ServicesSection";
 import HowItWorks from "@/components/sections/HowItWorks";
 import LocationsGrid from "@/components/sections/LocationsGrid";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
@@ -32,11 +31,14 @@ export const metadata = constructMetadata({
 export default function Home() {
   return (
     <div className="flex flex-col w-full">
-      {/* SECTION 1 - HERO */}
-      <HeroSection />
+      {/* TOP VIEWPORT CONTAINER: Hero + Marquee */}
+      <div className="flex flex-col lg:min-h-[calc(100vh-80px)] w-full">
+        {/* SECTION 1 - HERO */}
+        <HeroSection className="flex-1" />
 
-      {/* NEW SECTION - PREMIUM MARQUEE */}
-      <MarqueeSection />
+        {/* NEW SECTION - PREMIUM MARQUEE */}
+        <MarqueeSection />
+      </div>
 
       {/* SECTION 2 - TRUST STATISTICS */}
       <TrustStats />
@@ -50,9 +52,6 @@ export default function Home() {
       {/* NEW SECTION - COURSES WHEEL */}
       <CourseWheelSection />
 
-
-      {/* SECTION 5 - SERVICES */}
-      <ServicesSection />
 
       {/* SECTION 6 - HOW IT WORKS */}
       <HowItWorks />

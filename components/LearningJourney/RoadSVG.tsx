@@ -12,12 +12,12 @@ export default function RoadSVG({ progress }: RoadSVGProps) {
   const roadPath = ROAD_PATH;
 
   const pinnedMarkers = [
-    { id: 1, cx: 350, cy: 250 },
-    { id: 2, cx: 850, cy: 250 },
-    { id: 3, cx: 850, cy: 900 },
-    { id: 4, cx: 350, cy: 900 },
-    { id: 5, cx: 350, cy: 1550 },
-    { id: 6, cx: 750, cy: 1550 },
+    { id: 1, cx: 1120, cy: 250 },
+    { id: 3, cx: 1120, cy: 1000 },
+    { id: 2, cx: 1120, cy: 1750 },
+    { id: 4, cx: 80, cy: 250 },
+    { id: 5, cx: 80, cy: 1000 },
+    { id: 6, cx: 80, cy: 1750 },
   ];
 
   return (

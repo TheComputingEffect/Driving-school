@@ -48,13 +48,13 @@ export default function GalleryBento({ initialMedia }: GalleryBentoProps) {
     
     switch (pattern) {
       case 0:
-        return "md:col-span-2 md:row-span-2 aspect-square md:aspect-auto"; // Large square
+        return "col-span-2 md:col-span-2 md:row-span-2 aspect-video md:aspect-auto"; // Full width horizontal on mobile, large square on desktop
       case 3:
-        return "md:col-span-2 md:row-span-1 aspect-video md:aspect-auto"; // Wide horizontal
+        return "col-span-2 md:col-span-2 md:row-span-1 aspect-video md:aspect-auto"; // Wide horizontal on both
       case 6:
-        return "md:col-span-1 md:row-span-2 aspect-[1/2] md:aspect-auto"; // Tall vertical
+        return "col-span-1 md:col-span-1 md:row-span-2 aspect-square md:aspect-[1/2] md:aspect-auto"; // Square on mobile, tall vertical on desktop
       default:
-        return "md:col-span-1 md:row-span-1 aspect-square"; // Standard square
+        return "col-span-1 md:col-span-1 md:row-span-1 aspect-square"; // Standard square on both
     }
   };
 
@@ -85,7 +85,7 @@ export default function GalleryBento({ initialMedia }: GalleryBentoProps) {
       ) : (
         <motion.div 
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[250px]"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[minmax(150px,250px)] md:auto-rows-[250px]"
         >
           <AnimatePresence mode="popLayout">
             {filteredMedia.map((item, index) => {

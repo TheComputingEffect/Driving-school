@@ -22,10 +22,10 @@ export default function MapSection() {
           {/* Main Branch Card */}
           <button
             onClick={() => setActiveBranchKey("main")}
-            className={`text-left p-6 flex flex-col justify-between transition-all duration-300 cursor-pointer ${
+            className={`text-left p-6 flex flex-col justify-between transition-all duration-300 cursor-pointer rounded-2xl border-2 ${
               activeBranchKey === "main"
-                ? "premium-card border-brand-blue bg-brand-blue-light/20 ring-2 ring-brand-blue/10"
-                : "premium-card premium-card-hover"
+                ? "bg-white border-brand-red shadow-[0_0_20px_rgba(239,68,68,0.15)] scale-[1.02]"
+                : "bg-gray-50 border-transparent hover:bg-white hover:border-gray-200 hover:shadow-md"
             }`}
           >
             <div>
@@ -52,10 +52,10 @@ export default function MapSection() {
           {/* Branch 2 Card */}
           <button
             onClick={() => setActiveBranchKey("branch2")}
-            className={`text-left p-6 flex flex-col justify-between transition-all duration-300 cursor-pointer ${
+            className={`text-left p-6 flex flex-col justify-between transition-all duration-300 cursor-pointer rounded-2xl border-2 ${
               activeBranchKey === "branch2"
-                ? "premium-card border-brand-blue bg-brand-blue-light/20 ring-2 ring-brand-blue/10"
-                : "premium-card premium-card-hover"
+                ? "bg-white border-brand-blue shadow-[0_0_20px_rgba(59,130,246,0.15)] scale-[1.02]"
+                : "bg-gray-50 border-transparent hover:bg-white hover:border-gray-200 hover:shadow-md"
             }`}
           >
             <div>
