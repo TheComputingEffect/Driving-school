@@ -4,7 +4,6 @@ import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 // Premium Service Sections
 import DetailedServices from "@/components/sections/DetailedServices";
 import ServicePackages from "@/components/sections/ServicePackages";
-import FleetShowcase from "@/components/sections/FleetShowcase";
 
 export const metadata = constructMetadata({
   title: "Driving Licence & RTO Services | KPD",
@@ -27,8 +26,6 @@ export default function ServicesPage() {
       {/* 3. Pricing & Training Packages */}
       <ServicePackages />
 
-      {/* 5. Vehicle Fleet Showcase */}
-      <FleetShowcase />
 
     </div>
   );
