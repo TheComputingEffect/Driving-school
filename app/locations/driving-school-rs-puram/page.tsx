@@ -3,9 +3,9 @@ import { constructMetadata } from "@/lib/seo/metadata";
 import PremiumLocationTemplate from "@/components/locations/PremiumLocationTemplate";
 
 export const metadata = constructMetadata({
-  title: "Driving School in RS Puram, Coimbatore | K. Priyadharshini",
+  title: "Driving School in RS Puram | KPD",
   description:
-    "Looking for a driving school in RS Puram? K. Priyadharshini Driving School offers premium car training, ladies classes, and RTO services in RS Puram.",
+    "Top-rated driving school in RS Puram. We deliver premium car training, ladies driving classes, and seamless RTO services in RS Puram, Coimbatore.",
   path: "/locations/driving-school-rs-puram",
   keywords: ["Driving School RS Puram", "Best Driving Class RS Puram", "Driving School RS Puram Coimbatore"],
 });

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu } from "lucide-react";
 import MobileDrawer from "./MobileDrawer";
 import DemoModal from "../shared/DemoModal";
@@ -12,8 +13,7 @@ export const navLinks = [
   { name: "Services", href: "/services" },
   { name: "Locations", href: "/locations" },
   { name: "Gallery", href: "/gallery" },
-  { name: "Contact", href: "/contact" },
-  { name: "Admin", href: "/admin" }
+  { name: "Contact", href: "/contact" }
 ];
 
 export default function Navbar() {
@@ -26,30 +26,7 @@ export default function Navbar() {
         <div className="w-full max-w-[1200px] mx-auto px-4 md:px-6 flex items-center justify-between">
           {/* Logo SVG monogram + text */}
           <Link href="/" className="flex items-center gap-2.5 select-none shrink-0 group">
-            <svg
-              className="w-9 h-9 text-brand-red group-hover:scale-105 transition-transform"
-              viewBox="0 0 100 100"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect width="100" height="100" rx="22" fill="var(--color-brand-red)" />
-              <path
-                d="M32 70V30H46C55 30 60 35 60 41C60 47 55 51 46 51H39V70H32ZM39 44H45C49 44 52 42.5 52 40.5C52 38.5 49 37 45 37H39V44Z"
-                fill="white"
-              />
-              <path
-                d="M62 70V51H69C75 51 78 54 78 58C78 62 75 70 69 70H62ZM69 64C72 64 74 61 74 59.5C74 58 72 57 69 57H67V64H69Z"
-                fill="white"
-              />
-            </svg>
-            <div className="flex flex-col">
-              <span className="font-heading font-extrabold text-sm leading-tight tracking-tight text-brand-text">
-                K. Priyadharshini
-              </span>
-              <span className="text-[9px] font-bold text-brand-muted uppercase tracking-widest leading-none">
-                Driving School
-              </span>
-            </div>
+            <Image src="/logo_KPD.png" alt="K. Priyadharshini Driving School Logo" width={160} height={40} className="h-10 w-auto object-contain group-hover:scale-105 transition-transform" priority />
           </Link>
 
           {/* Desktop Nav Links */}

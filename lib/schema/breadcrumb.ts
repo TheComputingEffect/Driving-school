@@ -4,7 +4,7 @@ export interface BreadcrumbItemType {
 }
 
 export function getBreadcrumbSchema(items: BreadcrumbItemType[]) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kpriyadharshinidrivingschool.in";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kpriyadharshinidrivingschool.com";
   
   return {
     "@context": "https://schema.org",

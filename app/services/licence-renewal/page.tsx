@@ -4,9 +4,9 @@ import ComingSoon from "@/components/shared/ComingSoon";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export const metadata = constructMetadata({
-  title: "Driving Licence Renewal Coimbatore | K. Priyadharshini Driving School",
+  title: "Driving Licence Renewal | KPD",
   description:
-    "Renew your expired driving licence quickly in Coimbatore. Complete assistance with Form 1A medical certificates, online Sarathi portal filings, and RTO processing.",
+    "Quickly renew your expired driving licence in Coimbatore. We handle Form 1A medical certificates, online Sarathi portal filings, and RTO processing.",
   path: "/services/licence-renewal",
   keywords: ["Licence Renewal Coimbatore", "Renew Driving Licence Coimbatore", "RTO Services Coimbatore"],
 });

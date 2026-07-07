@@ -15,9 +15,9 @@ import HomeLocations from "@/components/sections/HomeLocations";
 
 // Static metadata conforming to Next.js metadata guidelines
 export const metadata = constructMetadata({
-  title: "Best Driving School in Coimbatore | K. Priyadharshini Driving School",
+  title: "Best Driving School in Coimbatore | KPD",
   description:
-    "Learn driving from expert instructors in Coimbatore. Ladies driving classes, licence services, student discounts, flexible schedules. Serving Kovaipudur, Sivananda Colony & all of Coimbatore.",
+    "Join the best driving school in Coimbatore for expert car training, lady instructors, and comprehensive RTO licence services. Book a demo today.",
   path: "/",
   keywords: [
     "Driving School Coimbatore",

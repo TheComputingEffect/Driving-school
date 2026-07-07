@@ -3,9 +3,9 @@ import { constructMetadata } from "@/lib/seo/metadata";
 import PremiumLocationTemplate from "@/components/locations/PremiumLocationTemplate";
 
 export const metadata = constructMetadata({
-  title: "Driving School in Sundarapuram, Coimbatore | K. Priyadharshini",
+  title: "Driving School in Sundarapuram | KPD",
   description:
-    "Looking for a driving school in Sundarapuram? K. Priyadharshini Driving School offers professional car training, ladies classes, and RTO help.",
+    "Expert driving school in Sundarapuram. We provide professional car training, ladies driving classes, and comprehensive RTO help in Sundarapuram.",
   path: "/locations/driving-school-sundarapuram",
   keywords: ["Driving School Sundarapuram", "Best Driving Class Sundarapuram", "Driving School Sundarapuram Coimbatore"],
 });

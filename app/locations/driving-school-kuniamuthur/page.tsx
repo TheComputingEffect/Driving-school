@@ -3,9 +3,9 @@ import { constructMetadata } from "@/lib/seo/metadata";
 import PremiumLocationTemplate from "@/components/locations/PremiumLocationTemplate";
 
 export const metadata = constructMetadata({
-  title: "Driving School in Kuniamuthur, Coimbatore | K. Priyadharshini",
+  title: "Driving School in Kuniamuthur | KPD",
   description:
-    "Looking for a driving school in Kuniamuthur? K. Priyadharshini Driving School offers expert training, ladies classes, and expert classes in Kuniamuthur.",
+    "Enroll at our driving school in Kuniamuthur. We offer comprehensive car training, dedicated ladies classes, and RTO support in Kuniamuthur, Coimbatore.",
   path: "/locations/driving-school-kuniamuthur",
   keywords: ["Driving School Kuniamuthur", "Best Driving Class Kuniamuthur", "Driving School Kuniamuthur Coimbatore"],
 });

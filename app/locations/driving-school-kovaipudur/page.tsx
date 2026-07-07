@@ -3,9 +3,9 @@ import { constructMetadata } from "@/lib/seo/metadata";
 import PremiumLocationTemplate from "@/components/locations/PremiumLocationTemplate";
 
 export const metadata = constructMetadata({
-  title: "Driving School in Kovaipudur, Coimbatore | K. Priyadharshini",
+  title: "Driving School in Kovaipudur | KPD",
   description:
-    "Looking for a driving school in Kovaipudur? K. Priyadharshini Driving School offers expert car training, ladies classes, and RTO services near Kovaipudur, Coimbatore.",
+    "Join our driving school in Kovaipudur. We provide expert car driving classes, lady instructors, and full RTO assistance near Kovaipudur, Coimbatore.",
   path: "/locations/driving-school-kovaipudur",
   keywords: ["Driving School Kovaipudur", "Best Driving Class Kovaipudur", "Ladies Driving Kovaipudur"],
 });
@@ -15,7 +15,7 @@ export default function KovaipudurLocationPage() {
     {
       id: "kovai-faq-1",
       question: "Where is your driving school located in Kovaipudur?",
-      answer: "Our main branch is located at 24/A, Main Road, Kovaipudur, Coimbatore. We are situated in a highly accessible zone."
+      answer: "Our main branch is located at Near TV Sekaran School, Kovaipudur, Coimbatore – 641042. We are situated in a highly accessible zone."
     },
     {
       id: "kovai-faq-2",

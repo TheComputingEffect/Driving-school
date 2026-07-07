@@ -1,7 +1,7 @@
 import { TestimonialItem } from "@/content/testimonials";
 
 export function getReviewsSchema(reviews: TestimonialItem[]) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kpriyadharshinidrivingschool.in";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kpriyadharshinidrivingschool.com";
   
   return reviews.map((review) => ({
     "@context": "https://schema.org",

@@ -25,11 +25,11 @@ const inter = Inter({
 // Root site-wide fallback metadata
 export const metadata: Metadata = {
   title: {
-    default: "Best Driving School in Coimbatore | K. Priyadharshini Driving School",
-    template: "%s | K. Priyadharshini Driving School",
+    default: "Best Driving School in Coimbatore | KPD",
+    template: "%s",
   },
   description:
-    "Learn driving with expert instructors in Coimbatore. Certified ladies training, student discounts, and flexible hours. Serving Kovaipudur & Sivananda Colony.",
+    "Learn driving with expert instructors in Coimbatore. We offer certified ladies training, student discounts, and flexible hours across multiple locations.",
 };
 
 export default function RootLayout({

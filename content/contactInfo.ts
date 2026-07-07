@@ -40,11 +40,11 @@ export interface ContactInfoType {
 
 export const contactInfo: ContactInfoType = {
   businessName: "K. Priyadharshini Driving School",
-  email: "info@kpriyadharshinidrivingschool.in",
-  phone: "+919842212345",
-  phoneFormatted: "+91 98422 12345",
-  whatsapp: "+919842212345",
-  whatsappLink: "https://wa.me/919842212345?text=Hello,%20I%20am%20interested%20in%20booking%20a%20free%20demo%20driving%20class.",
+  email: "info@kpriyadharshinidrivingschool.com",
+  phone: "+919843407878",
+  phoneFormatted: "+91 98434 07878",
+  whatsapp: "+919843407878",
+  whatsappLink: "https://wa.me/919843407878?text=Hello,%20I%20am%20interested%20in%20booking%20a%20free%20demo%20driving%20class.",
   operatingHours: {
     weekdays: "Mon–Sat : 6:00 AM – 8:00 PM",
     weekdaysOpens: "06:00",
@@ -56,7 +56,7 @@ export const contactInfo: ContactInfoType = {
   branches: {
     main: {
       name: "Main Branch (Kovaipudur)",
-      address: "24/A, Main Road, Kovaipudur, Coimbatore, Tamil Nadu 641042",
+      address: "Near TV Sekaran School, Kovaipudur, Coimbatore – 641042",
       locality: "Kovaipudur",
       region: "Tamil Nadu",
       postalCode: "641042",

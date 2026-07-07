@@ -3,9 +3,9 @@ import { constructMetadata } from "@/lib/seo/metadata";
 import PremiumLocationTemplate from "@/components/locations/PremiumLocationTemplate";
 
 export const metadata = constructMetadata({
-  title: "Driving School in Sivananda Colony, Coimbatore | K. Priyadharshini",
+  title: "Driving School in Sivananda Colony | KPD",
   description:
-    "Looking for a driving school in Sivananda Colony? K. Priyadharshini Driving School offers professional car driving lessons, ladies batches, and RTO help.",
+    "Professional driving school in Sivananda Colony. Experience quality car driving lessons, ladies batches, and RTO assistance in Sivananda Colony.",
   path: "/locations/driving-school-sivananda-colony",
   keywords: ["Driving School Sivananda Colony", "Best Driving Class Sivananda Colony", "Driving School Sivananda Colony Coimbatore"],
 });

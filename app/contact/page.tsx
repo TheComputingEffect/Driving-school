@@ -3,9 +3,9 @@ import { constructMetadata } from "@/lib/seo/metadata";
 import ContactPageClient from "./ContactPageClient";
 
 export const metadata = constructMetadata({
-  title: "Enrollment & Contact Center | K. Priyadharshini Driving School",
+  title: "Contact K. Priyadharshini Driving School",
   description:
-    "Get in touch with K. Priyadharshini Driving School in Coimbatore. Dial our support numbers, WhatsApp our team, locate our main branch or book your free demo.",
+    "Get in touch with K. Priyadharshini Driving School in Coimbatore. Contact us via phone or WhatsApp, locate our branches, or book your training session.",
   path: "/contact",
   keywords: [
     "Contact Driving School Coimbatore",

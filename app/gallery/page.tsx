@@ -7,9 +7,9 @@ import GalleryBento from "@/components/sections/GalleryBento";
 export const dynamic = "force-dynamic";
 
 export const metadata = constructMetadata({
-  title: "Academy Gallery | K. Priyadharshini Driving School Coimbatore",
+  title: "Driving School Gallery | KPD",
   description:
-    "View photos and videos of our dual-control training cars, practice sessions, student celebrations, and RTO licensing ceremonies in Coimbatore.",
+    "Explore our driving school gallery featuring dual-control training cars, practice sessions, student milestones, and licensing ceremonies in Coimbatore.",
   path: "/gallery",
   keywords: ["Driving Academy Coimbatore Gallery", "Dual Control Cars Coimbatore", "Driving Videos"],
 });

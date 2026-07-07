@@ -2,6 +2,7 @@
 
 import React, { useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { X, Phone, MessageSquare, Calendar, ShieldCheck } from "lucide-react";
 import { contactInfo } from "@/content/contactInfo";
 import { motion, AnimatePresence } from "framer-motion";
@@ -60,13 +61,8 @@ export default function MobileDrawer({ isOpen, onClose, navLinks }: MobileDrawer
             {/* Header */}
             <div className="flex items-center justify-between pb-6 border-b border-brand-border">
               <div className="flex items-center gap-2">
-                <span className="w-8 h-8 rounded-lg bg-brand-red flex items-center justify-center text-white font-bold text-sm tracking-tighter">
-                  KP
-                </span>
-                <span className="font-heading font-bold text-xs leading-none text-brand-text">
-                  Priyadharshini<br />
-                  <span className="text-[10px] text-brand-muted font-semibold tracking-wide">DRIVING SCHOOL</span>
-                </span>
+                <Image src="/logo_KPD.png" alt="KPD Logo" width={120} height={32} className="h-8 w-auto object-contain" />
+              
               </div>
               <button
                 onClick={onClose}

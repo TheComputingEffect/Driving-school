@@ -4,9 +4,9 @@ import MapSection from "@/components/sections/MapSection";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export const metadata = constructMetadata({
-  title: "Areas We Serve in Coimbatore | K. Priyadharshini Driving School",
+  title: "Driving School Locations | KPD",
   description:
-    "Explore our training coverage zones across Coimbatore. Serving Kovaipudur, Sivananda Colony, Kuniamuthur, Sundarapuram, RS Puram, and all major neighborhoods.",
+    "Find driving school locations across Coimbatore. We serve Kovaipudur, Sivananda Colony, Kuniamuthur, Sundarapuram, RS Puram, and nearby areas.",
   path: "/locations",
   keywords: ["Driving School Coimbatore Areas", "Driving School Near Me Coimbatore", "Best Driving Academy Coimbatore"],
 });

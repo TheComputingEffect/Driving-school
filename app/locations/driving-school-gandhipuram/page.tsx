@@ -3,9 +3,9 @@ import { constructMetadata } from "@/lib/seo/metadata";
 import PremiumLocationTemplate from "@/components/locations/PremiumLocationTemplate";
 
 export const metadata = constructMetadata({
-  title: "Driving School in Gandhipuram, Coimbatore | K. Priyadharshini",
+  title: "Driving School in Gandhipuram | KPD",
   description:
-    "Looking for a driving school in Gandhipuram? K. Priyadharshini Driving School offers professional car training, ladies classes, and RTO help in Gandhipuram.",
+    "Looking for a driving school in Gandhipuram? We offer professional car training, lady instructors, and end-to-end RTO services in Gandhipuram, Coimbatore.",
   path: "/locations/driving-school-gandhipuram",
   keywords: ["Driving School Gandhipuram", "Best Driving Class Gandhipuram", "Driving School Gandhipuram Coimbatore"],
 });

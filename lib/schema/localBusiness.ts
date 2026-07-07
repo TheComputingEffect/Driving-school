@@ -1,13 +1,14 @@
 import { contactInfo } from "@/content/contactInfo";
 
 export function getDrivingSchoolSchema() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kpriyadharshinidrivingschool.in";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kpriyadharshinidrivingschool.com";
   
   return {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "DrivingSchool"],
     "name": contactInfo.businessName,
     "image": `${siteUrl}/og/homepage.jpg`,
+    "logo": `${siteUrl}/logo_KPD.png`,
     "url": siteUrl,
     "telephone": contactInfo.phone,
     "email": contactInfo.email,
@@ -87,7 +88,7 @@ export function getDrivingSchoolSchema() {
 }
 
 export function getBranchLocalBusinessSchema(branchKey: "main" | "branch2") {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kpriyadharshinidrivingschool.in";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kpriyadharshinidrivingschool.com";
   const branch = contactInfo.branches[branchKey];
   
   return {
@@ -95,6 +96,7 @@ export function getBranchLocalBusinessSchema(branchKey: "main" | "branch2") {
     "@type": ["LocalBusiness", "DrivingSchool"],
     "name": `${contactInfo.businessName} - ${branch.name}`,
     "image": `${siteUrl}/og/homepage.jpg`,
+    "logo": `${siteUrl}/logo_KPD.png`,
     "url": `${siteUrl}/locations/driving-school-${branch.locality.toLowerCase().replace(/\s+/g, "-")}`,
     "telephone": branch.phone,
     "email": contactInfo.email,

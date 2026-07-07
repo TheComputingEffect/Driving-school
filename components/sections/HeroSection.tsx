@@ -46,7 +46,7 @@ export default function HeroSection({ className = "" }: { className?: string }) 
             </div>
             <div className="h-4.5 w-px bg-brand-border" />
             <span className="text-xs font-semibold text-brand-text">
-              4.9 rating on Google &middot; 5000+ Happy Learners
+              4.9 rating on Google &middot; 500+ Happy Learners
             </span>
           </motion.div>
 

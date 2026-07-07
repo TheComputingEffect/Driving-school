@@ -4,9 +4,9 @@ import ComingSoon from "@/components/shared/ComingSoon";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export const metadata = constructMetadata({
-  title: "RTO Services Coimbatore | K. Priyadharshini Driving School",
+  title: "Professional RTO Services | KPD",
   description:
-    "Professional RTO coordination in Coimbatore. Assistance with address changes, hypothecation termination (HP), duplicate licence, and vehicle fitness certificates.",
+    "Reliable RTO coordination in Coimbatore. Get assistance with address changes, hypothecation termination (HP), duplicate licences, and vehicle FCs.",
   path: "/services/rto-services",
   keywords: ["RTO Services Coimbatore", "Hypothecation Termination Coimbatore", "Vehicle Registration Coimbatore"],
 });

@@ -4,9 +4,9 @@ import ComingSoon from "@/components/shared/ComingSoon";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export const metadata = constructMetadata({
-  title: "Driving Licence Application Help Coimbatore | K. Priyadharshini",
+  title: "Apply for Driving Licence | KPD",
   description:
-    "Apply for a fresh Learner's Licence (LLR) and Permanent Smart-Card Driving Licence in Coimbatore. Documentation prep, test preparation, and slots booking.",
+    "Need help with your driving licence application in Coimbatore? We assist with LLR, permanent smart-card licences, document prep, and slot booking.",
   path: "/services/driving-licence",
   keywords: ["Driving Licence Services Coimbatore", "Apply for Driving Licence Coimbatore", "LLR Smart Card Coimbatore"],
 });

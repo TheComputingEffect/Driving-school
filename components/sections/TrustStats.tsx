@@ -38,7 +38,7 @@ function CountingNumber({ value, suffix }: { value: number; suffix: string }) {
 
 export default function TrustStats() {
   const stats: StatItem[] = [
-    { id: "stat-1", value: "5000+", label: "Students Trained", isNumeric: true, numValue: 5000, suffix: "+" },
+    { id: "stat-1", value: "500+", label: "Students Trained", isNumeric: true, numValue: 500, suffix: "+" },
     { id: "stat-2", value: "10+", label: "Years Experience", isNumeric: true, numValue: 10, suffix: "+" },
     { id: "stat-3", value: "4.9/5", label: "Google Rating", hasStars: true },
     { id: "stat-5", value: "100%", label: "Govt Approved" }

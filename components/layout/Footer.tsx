@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Clock, Car } from "lucide-react";
 import { contactInfo } from "@/content/contactInfo";
 
@@ -23,48 +24,12 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-4 flex flex-col space-y-6">
             <Link href="/" className="flex items-center gap-3 w-fit">
-              <div className="w-10 h-10 rounded-xl bg-brand-red flex items-center justify-center shrink-0 shadow-lg shadow-brand-red/20">
-                <Car className="w-6 h-6 text-white" />
-              </div>
-              <div className="flex flex-col">
-                <span 
-                  className="font-heading font-extrabold text-xl leading-none text-white tracking-tight"
-                  itemProp="name"
-                >
-                  K. Priyadharshini
-                </span>
-                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">
-                  Driving School
-                </span>
-              </div>
+              <Image src="/logo_KPD-footer.png" alt="K. Priyadharshini Driving School Logo" width={160} height={40} className="h-10 w-auto object-contain grayscale brightness-200 opacity-90 hover:grayscale-0 hover:opacity-100 transition-all" />
             </Link>
             <p className="text-gray-400 leading-relaxed text-sm pr-4">
               Coimbatore&apos;s premium Govt. approved driving academy. We focus on building confident, responsible drivers through dual-control vehicles and patient, professional trainers.
             </p>
-            <div className="flex items-center space-x-3 pt-2">
-              {contactInfo.socialLinks.facebook && (
-                <a
-                  href={contactInfo.socialLinks.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-red hover:border-brand-red hover:text-white transition-all"
-                  aria-label="Facebook Profile"
-                >
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                </a>
-              )}
-              {contactInfo.socialLinks.instagram && (
-                <a
-                  href={contactInfo.socialLinks.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-red hover:border-brand-red hover:text-white transition-all"
-                  aria-label="Instagram Profile"
-                >
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                </a>
-              )}
-            </div>
+
           </div>
 
           {/* Quick Links Column */}
@@ -181,10 +146,7 @@ export default function Footer() {
             <span>© {currentYear} K. Priyadharshini Driving School. All rights reserved.</span>
             <span className="text-gray-600">Designed & Developed by The Computing Effect</span>
           </div>
-          <div className="flex space-x-6">
-            <Link href="/about" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/contact" className="hover:text-white transition-colors">Terms of Service</Link>
-          </div>
+
         </div>
       </div>
     </footer>
