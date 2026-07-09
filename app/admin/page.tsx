@@ -82,7 +82,7 @@ export default function AdminLoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="block w-full pl-10 sm:text-sm border-gray-300 rounded-md focus:ring-brand-blue focus:border-brand-blue py-3 border outline-none transition-colors"
-                  placeholder="admin@kpds.com"
+                  placeholder="k.priyadharshinidrivingschool@gmail.com"
                 />
               </div>
             </div>
