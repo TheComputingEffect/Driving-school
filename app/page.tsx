@@ -43,6 +43,9 @@ export default function Home() {
       {/* SECTION 2 - TRUST STATISTICS */}
       <TrustStats />
 
+      {/* NEW SECTION - HOME LOCATIONS */}
+      <HomeLocations />
+
       {/* NEW SECTION - LEARNING PATH */}
       <LearningJourney />
 
@@ -58,9 +61,6 @@ export default function Home() {
 
       {/* SECTION 8 - TESTIMONIALS */}
       <TestimonialsSection />
-
-      {/* NEW SECTION - HOME LOCATIONS */}
-      <HomeLocations />
     </div>
   );
 }

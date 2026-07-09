@@ -46,7 +46,7 @@ export default function HeroSection({ className = "" }: { className?: string }) 
             </div>
             <div className="h-4.5 w-px bg-brand-border" />
             <span className="text-xs font-semibold text-brand-text">
-              4.9 rating on Google &middot; 500+ Happy Learners
+              4.9 rating on Google &middot; 1000+ Happy Learners
             </span>
           </motion.div>
 
@@ -70,7 +70,7 @@ export default function HeroSection({ className = "" }: { className?: string }) 
           <motion.div variants={itemVariants} className="grid grid-cols-2 gap-3 max-w-md pt-2 select-none">
             <div className="flex items-center gap-2 bg-white border border-brand-border/40 rounded-xl p-2.5 shadow-xs">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-red shrink-0" />
-              <span className="text-xs font-semibold text-brand-text">10+ Years Experience</span>
+              <span className="text-xs font-semibold text-brand-text">20+ Years Experience</span>
             </div>
             <div className="flex items-center gap-2 bg-white border border-brand-border/40 rounded-xl p-2.5 shadow-xs">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-blue shrink-0" />

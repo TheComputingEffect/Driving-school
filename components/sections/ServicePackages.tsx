@@ -13,7 +13,7 @@ export default function ServicePackages() {
       price: "Most Popular",
       popular: true,
       features: [
-        "15 Days of Practical Training",
+        "Comprehensive Practical Training",
         "Simulator Sessions Included",
         "LLR & Permanent Licence Processing",
         "City Traffic & Highway Driving",
@@ -26,7 +26,7 @@ export default function ServicePackages() {
       price: "Quick Fix",
       popular: false,
       features: [
-        "7 Days of Practical Training",
+        "Targeted Practical Training",
         "Focus on Weak Areas (Parking, etc.)",
         "Heavy Traffic Exposure",
         "Use your own car or our dual-control car",

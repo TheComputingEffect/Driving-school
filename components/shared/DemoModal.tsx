@@ -11,6 +11,7 @@ interface DemoModalProps {
 
 export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
   const [isMounted, setIsMounted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -38,11 +39,47 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
   if (!isMounted) return null;
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Normally handle submission here, for now just close
-    alert("Demo request submitted! We will contact you shortly.");
-    onClose();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          trainingType: formData.course || "General Inquiry",
+          classTiming: "Quick Booking (Demo)",
+          areaLocation: "Contact customer",
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        alert("Demo request submitted! We will contact you shortly.");
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+          course: "",
+          message: ""
+        });
+        onClose();
+      } else {
+        alert(data.message || "Failed to submit demo request.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("An error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -125,13 +162,12 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
           </div>
 
           <div className="space-y-1">
-            <label htmlFor="message" className="text-sm font-semibold text-gray-700">Message *</label>
+            <label htmlFor="message" className="text-sm font-semibold text-gray-700">Message (Optional)</label>
             <textarea 
               id="message"
               name="message"
-              required
               rows={3}
-              placeholder="Write us a message"
+              placeholder="Write us a message..."
               value={formData.message}
               onChange={handleChange}
               className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors outline-none text-sm text-gray-800 placeholder:text-gray-400 resize-none"
@@ -141,9 +177,17 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
           <div className="pt-2">
             <button 
               type="submit"
-              className="w-full bg-[#00B159] hover:bg-[#009E4F] text-white font-bold py-3.5 px-4 rounded-lg transition-colors uppercase tracking-wide text-sm"
+              disabled={isSubmitting}
+              className="w-full bg-[#00B159] hover:bg-[#009E4F] text-white font-bold py-3.5 px-4 rounded-lg transition-colors uppercase tracking-wide text-sm flex items-center justify-center gap-2"
             >
-              SEND MESSAGE
+              {isSubmitting ? (
+                <>
+                  <span className="w-5 h-5 border-3 border-white/20 border-t-white rounded-full animate-spin shrink-0" />
+                  Sending...
+                </>
+              ) : (
+                "SEND MESSAGE"
+              )}
             </button>
           </div>
         </form>

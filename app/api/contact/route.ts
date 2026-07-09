@@ -5,9 +5,9 @@ export async function POST(request: Request) {
   try {
     const data = await request.json();
     
-    // Basic validation
-    if (!data.fullName || !data.phone || !data.trainingType || !data.classTiming || !data.areaLocation) {
-      return NextResponse.json({ success: false, message: "Missing required fields" }, { status: 400 });
+    // Basic validation (only require fullName and phone)
+    if (!data.fullName || !data.phone) {
+      return NextResponse.json({ success: false, message: "Missing required fields (Name and Phone)" }, { status: 400 });
     }
 
     const entry: FormSubmission = {
@@ -15,9 +15,9 @@ export async function POST(request: Request) {
       fullName: data.fullName,
       phone: data.phone,
       email: data.email || "",
-      trainingType: data.trainingType,
-      classTiming: data.classTiming,
-      areaLocation: data.areaLocation,
+      trainingType: data.trainingType || data.course || "General Inquiry",
+      classTiming: data.classTiming || "Not specified",
+      areaLocation: data.areaLocation || "Not specified",
       message: data.message || "",
       submittedAt: new Date().toISOString(),
     };
