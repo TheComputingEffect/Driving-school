@@ -114,10 +114,11 @@ export default function CourseWheelSection() {
                 
                 <h3 className="text-3xl font-bold text-gray-900 mb-3">{activeCourse.title}</h3>
                 
-                <div className="flex items-center gap-4 text-sm text-gray-500 mb-6 font-medium">
-                  <span className="bg-gray-100 px-3 py-1 rounded-md">{activeCourse.duration}</span>
-                  <span className="bg-gray-100 px-3 py-1 rounded-md">{activeCourse.level} Level</span>
-                </div>
+                {activeCourse.duration && (
+                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-6 font-medium">
+                    <span className="bg-gray-100 px-3 py-1 rounded-md">{activeCourse.duration}</span>
+                  </div>
+                )}
 
                 <p className="text-gray-600 mb-8 leading-relaxed">
                   {activeCourse.description}

@@ -52,14 +52,14 @@ export default function TestimonialsSection() {
       id: 7,
       name: "Ramesh Kannan",
       role: "Student",
-      review: "Completed the 15-day course. The instructor was very knowledgeable and corrected my mistakes without getting angry. Best driving school experience.",
+      review: "Completed the course. The instructor was very knowledgeable and corrected my mistakes without getting angry. Best driving school experience.",
       rating: 5,
     },
     {
       id: 8,
       name: "Lakshmi Narayanan",
       role: "Teacher",
-      review: "I took the refresher course since I hadn't driven in 5 years. In just 5 days, I regained my confidence. The city traffic practice was very intense but exactly what I needed.",
+      review: "I took the refresher course since I hadn't driven in 5 years. In just a few sessions, I regained my confidence. The city traffic practice was very intense but exactly what I needed.",
       rating: 5,
     },
     {

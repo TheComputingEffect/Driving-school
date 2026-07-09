@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
-import fs from "fs/promises";
-import path from "path";
 import { deleteMedia } from "@/backend/mediaDb";
+import { deleteFromCloudinary } from "@/backend/cloudinary";
 
 export async function POST(request: Request) {
   try {
@@ -13,15 +12,10 @@ export async function POST(request: Request) {
 
     const deletedEntry = await deleteMedia(id);
 
-    // Delete local file if it exists
+    // Delete from Cloudinary if it exists
     if (deletedEntry && deletedEntry.public_id) {
-      try {
-        const filePath = path.join(process.cwd(), "public", "uploads", deletedEntry.public_id);
-        await fs.unlink(filePath);
-      } catch (err) {
-        console.error("Failed to delete local file:", err);
-        // Continue even if local file is missing so it gets removed from JSON
-      }
+      const resourceType = deletedEntry.type === "video" ? "video" : "image";
+      await deleteFromCloudinary(deletedEntry.public_id, resourceType);
     }
 
     return NextResponse.json({ success: true, message: "Deleted successfully" });

@@ -16,7 +16,7 @@ export default function ServicesFAQ() {
     },
     {
       question: "How long does it take to learn driving?",
-      answer: "Our standard beginner course is designed for 15 days of practical sessions. However, everyone learns at a different pace. We will extend support until you are completely confident behind the wheel."
+      answer: "Our beginner course is designed to provide comprehensive, thorough practical sessions. Everyone learns at a different pace, and we will extend support until you are completely confident behind the wheel."
     },
     {
       question: "Do you provide pick-up and drop services?",

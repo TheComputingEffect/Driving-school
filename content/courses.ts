@@ -15,7 +15,7 @@ export const courses: CourseItem[] = [
     title: "Car Driving Lessons",
     description: "Comprehensive package for beginners covering the absolute fundamentals of driving, traffic rules, and basic mechanics.",
     slug: "car-driving",
-    duration: "15 Days (1 hour daily)",
+    duration: "",
     level: "Beginner",
     features: [
       "Basic Vehicle Handling",
@@ -29,7 +29,7 @@ export const courses: CourseItem[] = [
     title: "Manual Car Training",
     description: "Master the art of manual transmission driving, gear shifting, hill starts, and smooth clutch controls in Coimbatore.",
     slug: "manual-car",
-    duration: "20 Days (1 hour daily)",
+    duration: "",
     level: "Beginner",
     features: [
       "Dual Control Practice Vehicles",
@@ -43,7 +43,7 @@ export const courses: CourseItem[] = [
     title: "Automatic Car Training",
     description: "Learn to drive modern automatic transmission cars easily. Perfect for effortless city driving and stress-free commutes.",
     slug: "automatic-car",
-    duration: "10 Days (1 hour daily)",
+    duration: "",
     level: "Beginner",
     features: [
       "Automatic Gear Selector Guide",
@@ -58,7 +58,7 @@ export const courses: CourseItem[] = [
     description: "Specialized, highly popular driving classes for female students, taught exclusively by certified female instructors.",
     slug: "ladies-driving",
     tag: "Popular",
-    duration: "15-20 Days (Flexible Batches)",
+    duration: "",
     level: "All Levels",
     features: [
       "1-on-1 Female Instructor",
@@ -72,27 +72,13 @@ export const courses: CourseItem[] = [
     title: "Student Packages",
     description: "Affordable driving packages designed specifically for college students in Coimbatore with custom schedules.",
     slug: "student-packages",
-    duration: "15 Days (Flexible)",
+    duration: "",
     level: "Beginner",
     features: [
       "Special College Student Discount",
       "Exam-Friendly Timing Slots",
       "LLR & Licence Assistance",
       "Group Booking Discounts"
-    ]
-  },
-  {
-    id: "course-corporate-training",
-    title: "Corporate Training",
-    description: "Professional defensive driving courses and assessment packages tailored for employees and corporate teams.",
-    slug: "corporate-training",
-    duration: "3-5 Days Workshops",
-    level: "Advanced",
-    features: [
-      "Defensive Driving Techniques",
-      "Highway Safety Protocol",
-      "Fuel Efficiency Optimization",
-      "Post-Training Assessment Report"
     ]
   }
 ];
