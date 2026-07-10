@@ -12,7 +12,7 @@ export default async function SubmissionsPage() {
         <div>
           <h1 className="text-2xl font-bold text-gray-900 font-heading">Form Submissions</h1>
           <p className="text-sm text-gray-500 mt-1">
-            View all inquiries and demo bookings from the website.
+            View all inquiries and submissions from the website.
           </p>
         </div>
       </div>

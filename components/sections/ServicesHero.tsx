@@ -37,7 +37,7 @@ export default function ServicesHero() {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <CTAButton href="/contact" variant="primary" className="w-full sm:w-auto h-14 text-base px-8 shadow-xl shadow-brand-red/20">
-              Book a Free Demo Class
+              Enquire Now
             </CTAButton>
             <CTAButton href="#packages" variant="outline" className="w-full sm:w-auto h-14 text-base px-8 bg-white">
               View Training Packages

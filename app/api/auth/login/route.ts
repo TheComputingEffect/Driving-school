@@ -1,19 +1,19 @@
 import { NextResponse } from "next/server";
 import { signToken } from "@/backend/auth";
+import { verifyAdminCredentials } from "@/backend/adminDb";
 import { cookies } from "next/headers";
 
 export async function POST(request: Request) {
   try {
     const { email, password } = await request.json();
 
-    const adminEmail = process.env.ADMIN_EMAIL;
-    const adminPassword = process.env.ADMIN_PASSWORD;
-
-    if (!adminEmail || !adminPassword) {
-      return NextResponse.json({ success: false, message: "Server misconfiguration" }, { status: 500 });
+    if (!email || !password) {
+      return NextResponse.json({ success: false, message: "Email and password are required" }, { status: 400 });
     }
 
-    if (email === adminEmail && password === adminPassword) {
+    const isValid = await verifyAdminCredentials(email, password);
+
+    if (isValid) {
       const token = await signToken({ email });
       
       const cookieStore = await cookies();

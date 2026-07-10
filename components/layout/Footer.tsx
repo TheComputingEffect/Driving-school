@@ -24,7 +24,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-4 flex flex-col space-y-6">
             <Link href="/" className="flex items-center gap-3 w-fit">
-              <Image src="/logo_KPD-footer.png" alt="K. Priyadharshini Driving School Logo" width={160} height={40} className="h-10 w-auto object-contain grayscale brightness-200 opacity-90 hover:grayscale-0 hover:opacity-100 transition-all" />
+              <Image src="/logo_KPD-footer.png" alt="K. Priyadharshini Driving School Logo" width={160} height={40} className="h-10 w-auto object-contain" />
             </Link>
             <p className="text-gray-400 leading-relaxed text-sm pr-4">
               Coimbatore&apos;s premium Govt. approved driving academy. We focus on building confident, responsible drivers through dual-control vehicles and patient, professional trainers.

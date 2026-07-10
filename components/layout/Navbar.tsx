@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu } from "lucide-react";
 import MobileDrawer from "./MobileDrawer";
-import DemoModal from "../shared/DemoModal";
 import CTAButton from "../shared/CTAButton";
 
 export const navLinks = [
@@ -18,7 +17,6 @@ export const navLinks = [
 
 export default function Navbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   return (
     <>
@@ -45,12 +43,12 @@ export default function Navbar() {
 
           {/* Desktop CTA Action */}
           <div className="hidden lg:block">
-            <button 
-              onClick={() => setIsDemoModalOpen(true)}
-              className="px-5 py-2 text-xs rounded-lg bg-brand-red text-white hover:bg-red-700 font-bold tracking-wide uppercase transition-colors"
+            <Link 
+              href="/contact"
+              className="px-5 py-2 text-xs rounded-lg bg-brand-red text-white hover:bg-red-700 font-bold tracking-wide uppercase transition-colors flex items-center justify-center"
             >
-              Book Free Demo
-            </button>
+              Enquire Now
+            </Link>
           </div>
 
           {/* Mobile Toggler */}
@@ -74,11 +72,6 @@ export default function Navbar() {
         navLinks={navLinks}
       />
 
-      {/* Demo Modal */}
-      <DemoModal 
-        isOpen={isDemoModalOpen} 
-        onClose={() => setIsDemoModalOpen(false)} 
-      />
     </>
   );
 }

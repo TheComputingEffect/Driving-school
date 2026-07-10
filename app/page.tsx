@@ -17,7 +17,7 @@ import HomeLocations from "@/components/sections/HomeLocations";
 export const metadata = constructMetadata({
   title: "Best Driving School in Coimbatore | KPD",
   description:
-    "Join the best driving school in Coimbatore for expert car training, lady instructors, and comprehensive RTO licence services. Book a demo today.",
+    "Join the best driving school in Coimbatore for expert car training, lady instructors, and comprehensive RTO licence services. Enquire now.",
   path: "/",
   keywords: [
     "Driving School Coimbatore",

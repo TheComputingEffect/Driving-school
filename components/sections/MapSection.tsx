@@ -10,7 +10,7 @@ export default function MapSection() {
   const activeBranch: BranchInfo = contactInfo.branches[activeBranchKey];
 
   return (
-    <section className="bg-[#F8FAFC] py-16 md:py-24 border-b border-brand-border">
+    <section id="locationSection" className="bg-[#F8FAFC] py-16 md:py-24 border-b border-brand-border">
       <div className="max-w-[1200px] mx-auto px-4 md:px-6">
         <SectionHeader
           title="Our Training Locations &amp; Branches"

@@ -5,10 +5,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Calendar, Star, Shield, MapPin, Phone } from "lucide-react";
 import { contactInfo } from "@/content/contactInfo";
-import DemoModal from "../shared/DemoModal";
+import Link from "next/link";
 
 export default function HeroSection({ className = "" }: { className?: string }) {
-  const [isDemoModalOpen, setIsDemoModalOpen] = React.useState(false);
 
   const containerVariants: any = {
     hidden: { opacity: 0 },
@@ -91,13 +90,13 @@ export default function HeroSection({ className = "" }: { className?: string }) 
             variants={itemVariants}
             className="flex flex-col sm:flex-row sm:items-center gap-4 pt-4"
           >
-            <button 
-              onClick={() => setIsDemoModalOpen(true)}
+            <Link 
+              href="/contact"
               className="inline-flex items-center justify-center gap-2 text-sm font-semibold py-3.5 px-6 rounded-lg bg-brand-red text-white hover:bg-red-700 transition-colors uppercase tracking-wide"
             >
               <Calendar className="w-4.5 h-4.5" />
-              Book Free Demo &rarr;
-            </button>
+              Enquire Now &rarr;
+            </Link>
             
             <a
               href={`tel:${contactInfo.phone}`}
@@ -236,8 +235,6 @@ export default function HeroSection({ className = "" }: { className?: string }) 
           </svg>
         </motion.div>
       </div>
-
-      <DemoModal isOpen={isDemoModalOpen} onClose={() => setIsDemoModalOpen(false)} />
     </section>
   );
 }

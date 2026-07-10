@@ -44,7 +44,7 @@ export const contactInfo: ContactInfoType = {
   phone: "+919843407878",
   phoneFormatted: "+91 98434 07878",
   whatsapp: "+919843407878",
-  whatsappLink: "https://wa.me/919843407878?text=Hello,%20I%20am%20interested%20in%20booking%20a%20free%20demo%20driving%20class.",
+  whatsappLink: "https://wa.me/919843407878?text=Hello,%20I%20am%20interested%20in%20enquiring%20about%20driving%20classes.",
   operatingHours: {
     weekdays: "Mon–Sat : 6:00 AM – 5:30 PM",
     weekdaysOpens: "06:00",

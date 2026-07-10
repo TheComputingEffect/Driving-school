@@ -94,7 +94,7 @@ export default function PremiumLocationTemplate({
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 text-white font-bold py-3.5 px-8 rounded-full transition-all shadow-lg shadow-brand-red/20"
               >
-                Book Free Demo
+                Enquire Now
               </Link>
               <a
                 href={contactInfo.whatsappLink}

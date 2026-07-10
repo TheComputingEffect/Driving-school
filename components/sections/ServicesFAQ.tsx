@@ -12,7 +12,7 @@ export default function ServicesFAQ() {
     },
     {
       question: "Do you have female instructors for ladies?",
-      answer: "Yes, we have certified and experienced female driving instructors specifically available for our female learners upon request. Just mention it when booking your demo!"
+      answer: "Yes, we have certified and experienced female driving instructors specifically available for our female learners upon request. Just mention it when submitting your enquiry!"
     },
     {
       question: "How long does it take to learn driving?",
