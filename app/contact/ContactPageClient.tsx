@@ -18,6 +18,7 @@ import {
 import { contactInfo, BranchInfo } from "@/content/contactInfo";
 import { courses } from "@/content/courses";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import MapSection from "@/components/sections/MapSection";
 
 export default function ContactPageClient() {
   const crumbs = [{ name: "Contact", url: "/contact" }];
@@ -573,9 +574,8 @@ export default function ContactPageClient() {
         </div>
       </section>
 
-
-
-
+      {/* Locations Map Section */}
+      <MapSection />
     </div>
   );
 }

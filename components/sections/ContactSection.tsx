@@ -11,7 +11,7 @@ export default function ContactSection() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-white rounded-3xl p-8 md:p-12 shadow-xl">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Ready to start driving?</h2>
-            <p className="text-gray-600">Give us a call and book your free demo session today.</p>
+            <p className="text-gray-600">Give us a call and enquire about your classes today.</p>
           </div>
           <a
             href={`tel:${contactInfo.phone}`}

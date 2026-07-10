@@ -34,13 +34,13 @@ export default function StickyBar() {
           <span>WhatsApp</span>
         </a>
 
-        {/* Book Demo Button */}
+        {/* Enquire Now Button */}
         <Link
           href="/contact"
           className="flex flex-col items-center justify-center gap-1 text-[11px] font-bold text-brand-red hover:bg-brand-bg transition-colors active:bg-zinc-100"
         >
           <Calendar className="w-5 h-5" />
-          <span>Book Demo</span>
+          <span>Enquire Now</span>
         </Link>
       </div>
     </div>

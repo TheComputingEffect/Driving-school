@@ -59,7 +59,7 @@ export default function ComingSoon({
               <Link href="/contact" className="text-brand-blue hover:underline font-medium block">
                 &rarr; Contact Center
               </Link>
-              <span className="text-xs text-brand-muted">Book a demo in Coimbatore</span>
+              <span className="text-xs text-brand-muted">Enquire in Coimbatore</span>
             </li>
           </ul>
         </div>
@@ -67,7 +67,7 @@ export default function ComingSoon({
         {/* Call to action */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <CTAButton href="/contact" variant="primary">
-            Book Free Demo Class
+            Enquire Now
           </CTAButton>
           <Link href="/" className="inline-flex items-center gap-1 text-sm font-semibold text-brand-text hover:text-brand-blue transition-colors">
             <ArrowLeft className="w-4 h-4" />

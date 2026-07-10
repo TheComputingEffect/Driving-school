@@ -17,8 +17,8 @@ export default function HowItWorks() {
   const steps: StepItem[] = [
     {
       number: 1,
-      label: "Contact Us / Book Demo",
-      description: "Submit a request online or call us directly to book your free trial demo session.",
+      label: "Contact Us / Enquire Now",
+      description: "Submit an online request or call us directly to enquire about training classes.",
       icon: PhoneCall
     },
     {

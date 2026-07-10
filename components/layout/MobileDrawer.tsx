@@ -117,7 +117,7 @@ export default function MobileDrawer({ isOpen, onClose, navLinks }: MobileDrawer
                   className="flex items-center justify-center gap-2 py-3 rounded-xl bg-brand-red text-white font-medium hover:bg-red-700 transition-colors"
                 >
                   <Calendar className="w-4 h-4" />
-                  <span>Book Free Demo</span>
+                   <span>Enquire Now</span>
                 </Link>
               </div>
             </div>
