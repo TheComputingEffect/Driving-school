@@ -24,7 +24,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-4 flex flex-col space-y-6">
             <Link href="/" className="flex items-center gap-3 w-fit">
-              <Image src="/logo_KPD-footer.png" alt="K. Priyadharshini Driving School Logo" width={160} height={40} className="h-10 w-auto object-contain grayscale brightness-200 opacity-90 hover:grayscale-0 hover:opacity-100 transition-all" />
+              <Image src="/logo_KPD-footer.png" alt="K. Priyadharshini Driving School Logo" width={224} height={56} className="h-12 md:h-14 w-auto object-contain hover:scale-[1.03] transition-transform duration-300" />
             </Link>
             <p className="text-gray-400 leading-relaxed text-sm pr-4">
               Coimbatore&apos;s premium Govt. approved driving academy. We focus on building confident, responsible drivers through dual-control vehicles and patient, professional trainers.
@@ -92,14 +92,17 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex gap-3 items-start group">
                 <MapPin className="w-5 h-5 text-brand-red shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                <div 
+                <a 
+                  href="https://maps.app.goo.gl/Npp53m3tcbxunh336"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   itemProp="address" 
                   itemScope 
                   itemType="https://schema.org/PostalAddress" 
-                  className="text-gray-400 leading-relaxed"
+                  className="text-gray-400 leading-relaxed hover:text-white hover:underline transition-all block"
                 >
                   <span itemProp="streetAddress">{contactInfo.branches.main.address}</span>
-                </div>
+                </a>
               </li>
               <li className="flex gap-3 items-start group">
                 <Phone className="w-5 h-5 text-brand-red shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
@@ -108,13 +111,7 @@ export default function Footer() {
                     href={`tel:${contactInfo.branches.main.phone}`} 
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    +91 98434 07878 <span className="text-gray-500 text-xs ml-1">(Kovaipudur)</span>
-                  </a>
-                  <a 
-                    href={`tel:${contactInfo.branches.branch2.phone}`} 
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    +91 93451 45678 <span className="text-gray-500 text-xs ml-1">(Sivananda Colony)</span>
+                    +91 98434 07878
                   </a>
                 </div>
               </li>
