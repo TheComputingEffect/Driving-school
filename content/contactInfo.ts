@@ -40,7 +40,7 @@ export interface ContactInfoType {
 
 export const contactInfo: ContactInfoType = {
   businessName: "K. Priyadharshini Driving School",
-  email: "info@kpriyadharshinidrivingschool.com",
+  email: "kpriyadharshinidrivingschool@gmail.com",
   phone: "+919843407878",
   phoneFormatted: "+91 98434 07878",
   whatsapp: "+919843407878",

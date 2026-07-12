@@ -32,6 +32,30 @@ export const services: ServiceItem[] = [
     ]
   },
   {
+    id: "service-name-change",
+    title: "Name Change",
+    description: "Legal name correction and smart card updating assistance for your driving licence records at the Coimbatore RTO.",
+    slug: "name-change",
+    features: [
+      "Gazette Notification Documentation",
+      "RTO Application Processing",
+      "Smart Card Update Tracking",
+      "Legal Affidavit Assistance"
+    ]
+  },
+  {
+    id: "service-address-change",
+    title: "Address Change",
+    description: "Process your driving licence address change smoothly when relocating locally or from another state.",
+    slug: "address-change",
+    features: [
+      "Address Proof Verification",
+      "Interstate NOC Assistance",
+      "RTO Portal Online Filing",
+      "Updated Smart Card Delivery"
+    ]
+  },
+  {
     id: "service-vehicle-fc",
     title: "Vehicle FC Upgrade",
     description: "Get Fitness Certificates (FC) renewed for your transport or non-transport vehicles, matching all Indian government norms.",

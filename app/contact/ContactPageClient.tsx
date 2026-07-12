@@ -14,6 +14,7 @@ import {
   Compass,
   Info,
   ChevronRight,
+  X,
 } from "lucide-react";
 import { contactInfo, BranchInfo } from "@/content/contactInfo";
 import { courses } from "@/content/courses";
@@ -26,6 +27,9 @@ export default function ContactPageClient() {
   // Active Branch Map Selector
   const [activeBranchKey, setActiveBranchKey] = useState<"main" | "branch2">("main");
   const activeBranch: BranchInfo = contactInfo.branches[activeBranchKey];
+
+  // Call Us Modal State
+  const [isCallModalOpen, setIsCallModalOpen] = useState(false);
 
   // Form State
   const [fullName, setFullName] = useState("");
@@ -292,17 +296,27 @@ export default function ContactPageClient() {
               className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-auto pt-8"
             >
               {/* Card 1: Call Us */}
-              <motion.div variants={cardVariants} className="premium-card p-5 flex flex-col justify-between">
+              <motion.div
+                variants={cardVariants}
+                className="premium-card p-5 flex flex-col justify-between cursor-pointer group hover:border-brand-red/30 transition-all duration-300"
+                onClick={() => setIsCallModalOpen(true)}
+              >
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-brand-red-light flex items-center justify-center text-brand-red mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-brand-red-light flex items-center justify-center text-brand-red mb-3 group-hover:scale-110 transition-transform">
                     <Phone className="w-5 h-5" />
                   </div>
                   <h3 className="text-base font-bold text-brand-text mb-1.5">Call Us</h3>
                 </div>
-                <a href={`tel:${contactInfo.phone}`} className="inline-flex items-center gap-1 text-xs font-bold text-brand-red hover:text-red-700 transition-colors">
-                  <span>{contactInfo.phoneFormatted}</span>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsCallModalOpen(true);
+                  }}
+                  className="inline-flex items-center gap-1 text-xs font-bold text-brand-red hover:text-red-700 transition-colors text-left cursor-pointer"
+                >
+                  <span>View Numbers</span>
                   <ChevronRight className="w-3.5 h-3.5" />
-                </a>
+                </button>
               </motion.div>
 
               {/* Card 2: WhatsApp Chat */}
@@ -320,14 +334,24 @@ export default function ContactPageClient() {
               </motion.div>
 
               {/* Card 3: Visit Academy */}
-              <motion.div variants={cardVariants} className="premium-card p-5 flex flex-col justify-between">
+              <motion.div
+                variants={cardVariants}
+                className="premium-card p-5 flex flex-col justify-between cursor-pointer group hover:border-brand-red/30 transition-all duration-300"
+                onClick={scrollToMap}
+              >
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-brand-blue-light flex items-center justify-center text-brand-blue mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-brand-red-light flex items-center justify-center text-brand-red mb-3 group-hover:scale-110 transition-transform">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <h3 className="text-base font-bold text-brand-text mb-1.5">Visit Us</h3>
                 </div>
-                <button onClick={scrollToMap} className="inline-flex items-center gap-1 text-xs font-bold text-brand-blue hover:text-blue-700 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    scrollToMap();
+                  }}
+                  className="inline-flex items-center gap-1 text-xs font-bold text-brand-red hover:text-red-700 transition-colors text-left cursor-pointer"
+                >
                   <span>Get Directions</span>
                   <ChevronRight className="w-3.5 h-3.5" />
                 </button>
@@ -576,6 +600,81 @@ export default function ContactPageClient() {
 
       {/* Locations Map Section */}
 
+      {/* Call Us Modal */}
+      <AnimatePresence>
+        {isCallModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-black/60 backdrop-blur-xs"
+              onClick={() => setIsCallModalOpen(false)}
+            />
+            {/* Modal Content */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="relative bg-white rounded-3xl shadow-2xl p-6 md:p-8 max-w-md w-full border border-brand-border z-10 overflow-hidden"
+            >
+              {/* Colored top gradient stripe */}
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-brand-red via-brand-yellow to-brand-blue" />
+              
+              {/* Close Button */}
+              <button
+                onClick={() => setIsCallModalOpen(false)}
+                className="absolute top-4 right-4 p-1.5 rounded-lg text-brand-muted hover:text-brand-text hover:bg-brand-bg transition-colors cursor-pointer"
+                aria-label="Close modal"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="text-center mb-6">
+                <div className="mx-auto w-12 h-12 rounded-full bg-brand-red-light flex items-center justify-center text-brand-red mb-3">
+                  <Phone className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-extrabold text-brand-text">Contact Our Branches</h3>
+                <p className="text-brand-muted text-xs mt-1">Select a branch to call directly</p>
+              </div>
+
+              <div className="space-y-4">
+                {/* Kovaipudur Branch */}
+                <div className="p-4 rounded-2xl bg-brand-bg border border-brand-border flex items-center justify-between hover:border-brand-red/30 transition-all group">
+                  <div>
+                    <h4 className="font-bold text-brand-text text-sm group-hover:text-brand-red transition-colors">Kovaipudur Branch</h4>
+                    <p className="text-xs text-brand-muted font-medium mt-0.5">98434 07878</p>
+                  </div>
+                  <a
+                    href="tel:+919843407878"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold rounded-xl bg-brand-red text-white hover:bg-red-700 transition-colors shadow-md shadow-brand-red/10 cursor-pointer"
+                  >
+                    <Phone className="w-3.5 h-3.5" />
+                    <span>Call Now</span>
+                  </a>
+                </div>
+
+                {/* Sivananda Colony Branch */}
+                <div className="p-4 rounded-2xl bg-brand-bg border border-brand-border flex items-center justify-between hover:border-brand-red/30 transition-all group">
+                  <div>
+                    <h4 className="font-bold text-brand-text text-sm group-hover:text-brand-red transition-colors">Sivananda Colony Branch</h4>
+                    <p className="text-xs text-brand-muted font-medium mt-0.5">93451 45678</p>
+                  </div>
+                  <a
+                    href="tel:+919345145678"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold rounded-xl bg-brand-red text-white hover:bg-red-700 transition-colors shadow-md shadow-brand-red/10 cursor-pointer"
+                  >
+                    <Phone className="w-3.5 h-3.5" />
+                    <span>Call Now</span>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

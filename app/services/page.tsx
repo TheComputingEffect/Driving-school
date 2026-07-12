@@ -3,6 +3,7 @@ import { constructMetadata } from "@/lib/seo/metadata";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 // Premium Service Sections
 import DetailedServices from "@/components/sections/DetailedServices";
+import ServicesSection from "@/components/sections/ServicesSection";
 import ServicePackages from "@/components/sections/ServicePackages";
 
 export const metadata = constructMetadata({
@@ -23,10 +24,11 @@ export default function ServicesPage() {
       {/* 2. Detailed Breakdown of Core Services */}
       <DetailedServices />
 
+      {/* 2.5. Grid of RTO & Licence Services */}
+      <ServicesSection />
+
       {/* 3. Pricing & Training Packages */}
       <ServicePackages />
-
-
     </div>
   );
 }
