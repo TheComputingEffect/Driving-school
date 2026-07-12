@@ -11,13 +11,29 @@ const getSecretKey = () => {
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // CSRF Protection: Validate Origin/Referer on mutating requests
+  if (request.method !== "GET" && request.method !== "HEAD" && request.method !== "OPTIONS") {
+    const origin = request.headers.get("origin") ?? request.headers.get("referer");
+    if (origin) {
+      try {
+        const originUrl = new URL(origin);
+        // Compare the host of the origin with the requested host
+        if (originUrl.host !== request.nextUrl.host) {
+          return NextResponse.json({ success: false, message: "CSRF verification failed" }, { status: 403 });
+        }
+      } catch (e) {
+        // Malformed URL, ignore or block
+      }
+    }
+  }
+
   // Protect /admin/dashboard and all its sub-routes
   // Protect /api/upload and /api/delete
   const isProtectedAdminRoute = pathname.startsWith("/admin/dashboard");
   const isProtectedApiRoute = pathname.startsWith("/api/upload") || pathname.startsWith("/api/delete");
 
   if (isProtectedAdminRoute || isProtectedApiRoute) {
-    const token = request.cookies.get("admin-session")?.value;
+    const token = request.cookies.get("kpd-admin-session")?.value;
 
     if (!token) {
       if (isProtectedApiRoute) {
@@ -45,14 +61,14 @@ export async function middleware(request: NextRequest) {
         return NextResponse.json({ success: false, message: "Unauthorized" }, { status: 401 });
       }
       const response = NextResponse.redirect(new URL("/admin", request.url));
-      response.cookies.delete("admin-session"); // Clear the invalid cookie
+      response.cookies.delete("kpd-admin-session"); // Clear the invalid cookie
       return response;
     }
   }
 
   // Prevent logged-in admins from seeing the login page again
   if (pathname === "/admin") {
-    const token = request.cookies.get("admin-session")?.value;
+    const token = request.cookies.get("kpd-admin-session")?.value;
     if (token) {
       const secret = getSecretKey();
       if (secret) {

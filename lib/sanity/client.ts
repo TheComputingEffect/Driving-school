@@ -8,8 +8,6 @@ import { services } from "@/content/services";
 
 export const sanityClient = {
   fetch: async <T>(query: string, params: Record<string, any> = {}): Promise<T> => {
-    console.log("Fetching via Sanity mock client:", query, params);
-    
     // Simple dynamic queries mapping
     if (query.includes("faq")) {
       return faqs as unknown as T;

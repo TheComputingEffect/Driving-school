@@ -11,6 +11,7 @@ import LocationsGrid from "@/components/sections/LocationsGrid";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import LearningJourney from "@/components/LearningJourney/LearningJourney";
 import CourseWheelSection from "@/components/sections/CourseWheelSection";
+import ServicesSection from "@/components/sections/ServicesSection";
 import HomeLocations from "@/components/sections/HomeLocations";
 
 // Static metadata conforming to Next.js metadata guidelines
@@ -55,6 +56,8 @@ export default function Home() {
       {/* NEW SECTION - COURSES WHEEL */}
       <CourseWheelSection />
 
+      {/* NEW SECTION - SERVICES GRID */}
+      <ServicesSection />
 
       {/* SECTION 6 - HOW IT WORKS */}
       <HowItWorks />

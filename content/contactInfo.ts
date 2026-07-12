@@ -40,7 +40,7 @@ export interface ContactInfoType {
 
 export const contactInfo: ContactInfoType = {
   businessName: "K. Priyadharshini Driving School",
-  email: "info@kpriyadharshinidrivingschool.com",
+  email: "kpriyadharshinidrivingschool@gmail.com",
   phone: "+919843407878",
   phoneFormatted: "+91 98434 07878",
   whatsapp: "+919843407878",
@@ -61,10 +61,10 @@ export const contactInfo: ContactInfoType = {
       region: "Tamil Nadu",
       postalCode: "641042",
       country: "IN",
-      latitude: 10.9348,
-      longitude: 76.9288,
-      mapUrl: "https://maps.google.com/?q=K.Priyadharshini+Driving+School+Kovaipudur+Coimbatore",
-      mapEmbedUrl: "https://maps.google.com/maps?q=10.9348,76.9288&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      latitude: 10.947387,
+      longitude: 76.934937,
+      mapUrl: "https://www.google.com/maps/dir/11.0303932,76.9606784/10.947387,76.934937/@10.9476389,76.9345314,19.34z/data=!4m4!4m3!1m1!4e1!1m0?entry=ttu&g_ep=EgoyMDI2MDcwNy4wIKXMDSoASAFQAw%3D%3D",
+      mapEmbedUrl: "https://maps.google.com/maps?q=10.947387,76.934937&t=&z=15&ie=UTF8&iwloc=&output=embed",
       phone: "+919843407878"
     },
     branch2: {
@@ -74,10 +74,10 @@ export const contactInfo: ContactInfoType = {
       region: "Tamil Nadu",
       postalCode: "641012",
       country: "IN",
-      latitude: 11.0264,
-      longitude: 76.9628,
-      mapUrl: "https://maps.google.com/?q=K.Priyadharshini+Driving+School+Sivananda+Colony+Coimbatore",
-      mapEmbedUrl: "https://maps.google.com/maps?q=11.0264,76.9628&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      latitude: 11.0245468,
+      longitude: 76.9588406,
+      mapUrl: "https://www.google.com/maps/dir/11.0303932,76.9606784/K.Priyadharshini+Driving+School,+bus+Stand,+Valluvar+St,+opposite+No.+5,+Sivananda+Colony,+Tatabad,+Coimbatore,+Tamil+Nadu+641012/@11.0231057,76.9577944,17z/data=!4m17!1m7!3m6!1s0x3ba859384c7f4ee3:0xf4b722a85bb6878c!2sK.Priyadharshini+Driving+School!8m2!3d11.0245468!4d76.9588406!16s%2Fg%2F11zgmf6ysh!4m8!1m1!4e1!1m5!1m1!1s0x3ba859384c7f4ee3:0xf4b722a85bb6878c!2m2!1d76.9588406!2d11.0245468?entry=ttu&g_ep=EgoyMDI2MDcwNy4wIKXMDSoASAFQAw%3D%3D",
+      mapEmbedUrl: "https://maps.google.com/maps?q=11.0245468,76.9588406&t=&z=15&ie=UTF8&iwloc=&output=embed",
       phone: "+919345145678"
     }
   },

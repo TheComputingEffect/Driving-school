@@ -71,7 +71,7 @@ export default function ServicesSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {services.map((service) => {
             const Icon = getIcon(service.slug);
@@ -79,24 +79,29 @@ export default function ServicesSection() {
               <motion.div
                 key={service.id}
                 variants={cardVariants}
-                className="premium-card premium-card-hover group cursor-pointer"
+                className="premium-card premium-card-hover group cursor-pointer hover:border-brand-blue/30 transition-all duration-300"
               >
-                <Link href="/services" className="p-6 flex flex-col justify-between h-full w-full">
+                <Link href="/contact" className="p-6 flex flex-col justify-between h-full w-full">
                   <div>
                     {/* Accent blue icon */}
-                    <div className="w-10 h-10 rounded-xl bg-brand-blue-light flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+                    <div className="w-10 h-10 rounded-xl bg-brand-blue-light flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                       <Icon className="w-5 h-5 text-brand-blue" />
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-lg font-bold text-brand-text mb-2.5 font-heading">
+                    <h3 className="text-lg font-bold text-brand-text mb-2.5 font-heading group-hover:text-brand-blue transition-colors">
                       {service.title}
                     </h3>
+
+                    {/* Description */}
+                    <p className="text-sm text-brand-muted leading-relaxed mb-4">
+                      {service.description}
+                    </p>
                   </div>
 
                   {/* Info backlink */}
                   <div className="inline-flex items-center gap-1 text-xs font-bold text-brand-blue group-hover:text-blue-800 transition-colors pt-4 select-none">
-                    <span>Learn more</span>
+                    <span>Enquire Now</span>
                     <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                   </div>
                 </Link>

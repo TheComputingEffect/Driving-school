@@ -2,11 +2,11 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Lock, Mail, Loader2, ArrowRight } from "lucide-react";
+import { Lock, Loader2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function AdminLoginPage() {
-  const [email, setEmail] = useState("");
+
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -21,12 +21,14 @@ export default function AdminLoginPage() {
       const res = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ password }),
       });
 
       const data = await res.json();
 
       if (res.ok && data.success) {
+        // Set an in-memory flag so we know this was a soft navigation
+        (window as any).__APP_LOGGED_IN__ = true;
         // Redirect to dashboard on success
         router.push("/admin/dashboard/gallery");
         router.refresh();
@@ -65,28 +67,6 @@ export default function AdminLoginPage() {
               </div>
             )}
             
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email address
-              </label>
-              <div className="mt-1 relative rounded-md shadow-sm">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Mail className="h-5 w-5 text-gray-400" />
-                </div>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="block w-full pl-10 sm:text-sm border-gray-300 rounded-md focus:ring-brand-blue focus:border-brand-blue py-3 border outline-none transition-colors"
-                  placeholder="k.priyadharshinidrivingschool@gmail.com"
-                />
-              </div>
-            </div>
-
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                 Password
