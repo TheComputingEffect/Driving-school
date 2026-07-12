@@ -1,5 +1,6 @@
 import React from "react";
 import { getSubmissions } from "@/backend/formDb";
+import { DeleteButton } from "./DeleteButton";
 
 export const dynamic = "force-dynamic";
 
@@ -32,6 +33,7 @@ export default async function SubmissionsPage() {
                   <th className="px-6 py-4 whitespace-nowrap">Contact</th>
                   <th className="px-6 py-4 whitespace-nowrap">Course & Timing</th>
                   <th className="px-6 py-4 whitespace-nowrap">Location</th>
+                  <th className="px-6 py-4 whitespace-nowrap text-right">Actions</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
@@ -59,6 +61,9 @@ export default async function SubmissionsPage() {
                     </td>
                     <td className="px-6 py-4">
                       <span className="text-gray-900">{sub.areaLocation}</span>
+                    </td>
+                    <td className="px-6 py-4 text-right">
+                      <DeleteButton id={sub.id} />
                     </td>
                   </tr>
                 ))}

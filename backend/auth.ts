@@ -8,7 +8,7 @@ const getSecretKey = () => {
   return new TextEncoder().encode(secret);
 };
 
-export async function signToken(payload: { email: string }) {
+export async function signToken(payload: { admin: boolean }) {
   const token = await new SignJWT(payload)
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { LogOut, Image as ImageIcon, Video, Home, Menu, X, MessageSquare } from "lucide-react";
+import { SessionEnforcer } from "./SessionEnforcer";
 
 export default function AdminDashboardLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -30,6 +31,7 @@ export default function AdminDashboardLayout({ children }: { children: React.Rea
 
   return (
     <div className="min-h-screen bg-gray-50 flex">
+      <SessionEnforcer />
       {/* Mobile sidebar overlay */}
       {isSidebarOpen && (
         <div 

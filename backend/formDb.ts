@@ -48,3 +48,15 @@ export async function addSubmission(entry: FormSubmission): Promise<void> {
   submissions.unshift(entry); // Add to the top
   await fs.writeFile(DB_PATH, JSON.stringify(submissions, null, 2), "utf-8");
 }
+
+export async function deleteSubmission(id: string): Promise<boolean> {
+  const submissions = await getSubmissions();
+  const initialLength = submissions.length;
+  const filtered = submissions.filter(sub => sub.id !== id);
+  
+  if (filtered.length !== initialLength) {
+    await fs.writeFile(DB_PATH, JSON.stringify(filtered, null, 2), "utf-8");
+    return true;
+  }
+  return false;
+}
