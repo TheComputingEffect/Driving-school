@@ -94,7 +94,7 @@ export default function HeroSection({ className = "" }: { className?: string }) 
               href="/contact"
               className="inline-flex items-center justify-center gap-2 text-sm font-semibold py-3.5 px-6 rounded-lg bg-brand-red text-white hover:bg-red-700 transition-colors uppercase tracking-wide"
             >
-              <Calendar className="w-4.5 h-4.5" />
+              <Calendar className="w-5 h-5" />
               Enquire Now &rarr;
             </Link>
             
@@ -102,8 +102,22 @@ export default function HeroSection({ className = "" }: { className?: string }) 
               href={`tel:${contactInfo.phone}`}
               className="inline-flex items-center justify-center gap-2 text-sm font-semibold py-3.5 px-6 rounded-lg bg-white border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-colors uppercase tracking-wide"
             >
-              <Phone className="w-4.5 h-4.5" />
+              <Phone className="w-5 h-5" />
               Call Us
+            </a>
+
+            <a
+              href={contactInfo.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 text-sm font-semibold py-3.5 px-6 rounded-lg bg-[#25D366] text-white hover:bg-[#20ba5a] transition-colors uppercase tracking-wide shadow-sm"
+            >
+              <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" fill="#ffffff" />
+                <path d="M12 3c-4.97 0-9 4.03-9 9 0 1.58.41 3.06 1.13 4.35L3 21l4.82-1.22c1.23.67 2.63 1.06 4.12 1.06 4.97 0 9-4.03 9-9s-4.03-9-9-9z" fill="#25D366" />
+                <path d="M15.42 12.87c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.54.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.37-1.94-1.19-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.52.1.47-.07 1.44-.59 1.64-1.15.2-.56.2-1.03.14-1.13-.06-.1-.22-.16-.46-.28z" fill="#ffffff" />
+              </svg>
+              WhatsApp
             </a>
           </motion.div>
         </motion.div>

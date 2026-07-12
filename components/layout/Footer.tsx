@@ -49,11 +49,11 @@ export default function Footer() {
       <div className="absolute bottom-[-20%] right-[-10%] w-[400px] h-[400px] bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
 
       <div
-        className="max-w-[1050px] mx-auto px-4 md:px-6 relative z-10"
+        className="max-w-[1200px] mx-auto px-4 md:px-6 relative z-10"
         itemScope
         itemType="https://schema.org/DrivingSchool"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-x-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-x-8 mb-8">
           {/* Column 1 – Logo and Description */}
           <div className="lg:col-span-4 flex flex-col space-y-4">
             <Link href="/" className="flex items-center gap-2.5 w-fit">
@@ -66,21 +66,21 @@ export default function Footer() {
               />
             </Link>
 
-            <p className="text-gray-400 leading-relaxed text-xs">
+            <p className="text-gray-400 leading-relaxed text-sm text-justify">
               Coimbatore’s premium government-approved driving academy. We focus on building confident, responsible drivers through dual-control vehicles and patient, professional trainers.
             </p>
 
             {/* Social Links */}
-            <div className="flex gap-2.5 pt-1">
+            <div className="flex gap-3 pt-1">
               {contactInfo.socialLinks.facebook && (
                 <a
                   href={contactInfo.socialLinks.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-7 h-7 rounded-lg bg-white/5 border border-white/10 hover:border-brand-red/50 hover:bg-brand-red/10 flex items-center justify-center text-gray-400 hover:text-white transition-all"
+                  className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-brand-red/50 hover:bg-brand-red/10 flex items-center justify-center text-gray-400 hover:text-white transition-all"
                   aria-label="Facebook Page"
                 >
-                  <FacebookIcon className="w-3.5 h-3.5" />
+                  <FacebookIcon className="w-5 h-5" />
                 </a>
               )}
               {contactInfo.socialLinks.instagram && (
@@ -88,10 +88,10 @@ export default function Footer() {
                   href={contactInfo.socialLinks.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-7 h-7 rounded-lg bg-white/5 border border-white/10 hover:border-brand-red/50 hover:bg-brand-red/10 flex items-center justify-center text-gray-400 hover:text-white transition-all"
+                  className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-brand-red/50 hover:bg-brand-red/10 flex items-center justify-center text-gray-400 hover:text-white transition-all"
                   aria-label="Instagram Profile"
                 >
-                  <InstagramIcon className="w-3.5 h-3.5" />
+                  <InstagramIcon className="w-5 h-5" />
                 </a>
               )}
             </div>
@@ -99,11 +99,11 @@ export default function Footer() {
 
           {/* Column 2 – Explore */}
           <div className="lg:col-span-2 flex flex-col space-y-4">
-            <h3 className="text-white font-bold tracking-wide uppercase text-xs">
+            <h3 className="text-white font-bold tracking-wider uppercase text-sm">
               Explore
             </h3>
 
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-3 text-sm">
               <li>
                 <Link
                   href="/about"
@@ -144,29 +144,29 @@ export default function Footer() {
 
           {/* Column 3 – Address and Phone Numbers */}
           <div className="lg:col-span-3 flex flex-col space-y-4">
-            <h3 className="text-white font-bold tracking-wide uppercase text-xs">
+            <h3 className="text-white font-bold tracking-wider uppercase text-sm">
               Address &amp; Phone
             </h3>
 
-            <div className="space-y-4 text-xs">
+            <div className="space-y-5 text-sm">
               {/* Kovaipudur Branch */}
               <div className="flex gap-2.5 items-start">
-                <MapPin className="w-4 h-4 text-brand-red shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                 <div className="flex flex-col">
-                  <span className="font-bold text-white text-xs">Kovaipudur Branch</span>
+                  <span className="font-bold text-white text-sm">Kovaipudur Branch</span>
                   <a
                     href={contactInfo.branches.main.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 leading-normal hover:text-white hover:underline transition-all block text-xs mt-0.5"
+                    className="text-gray-400 leading-normal hover:text-white hover:underline transition-all block text-sm mt-0.5"
                   >
                     Near TV Sekaran School, Kovaipudur, Coimbatore – 641042
                   </a>
                   <a
                     href="tel:+919843407878"
-                    className="text-gray-400 hover:text-white transition-colors text-xs font-semibold mt-1 flex items-center gap-1.5"
+                    className="text-gray-400 hover:text-white transition-colors text-sm font-semibold mt-1 flex items-center gap-1.5"
                   >
-                    <Phone className="w-3.5 h-3.5 text-brand-red shrink-0" />
+                    <Phone className="w-4 h-4 text-brand-red shrink-0" />
                     <span>+91 98434 07878</span>
                   </a>
                 </div>
@@ -174,22 +174,22 @@ export default function Footer() {
 
               {/* Sivananda Colony Branch */}
               <div className="flex gap-2.5 items-start">
-                <MapPin className="w-4 h-4 text-brand-red shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                 <div className="flex flex-col">
-                  <span className="font-bold text-white text-xs">Sivananda Colony Branch</span>
+                  <span className="font-bold text-white text-sm">Sivananda Colony Branch</span>
                   <a
                     href={contactInfo.branches.branch2.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 leading-normal hover:text-white hover:underline transition-all block text-xs mt-0.5"
+                    className="text-gray-400 leading-normal hover:text-white hover:underline transition-all block text-sm mt-0.5"
                   >
                     15, Sivananda Colony, Tatabad, Coimbatore, Tamil Nadu 641012
                   </a>
                   <a
                     href="tel:+919345145678"
-                    className="text-gray-400 hover:text-white transition-colors text-xs font-semibold mt-1 flex items-center gap-1.5"
+                    className="text-gray-400 hover:text-white transition-colors text-sm font-semibold mt-1 flex items-center gap-1.5"
                   >
-                    <Phone className="w-3.5 h-3.5 text-brand-red shrink-0" />
+                    <Phone className="w-4 h-4 text-brand-red shrink-0" />
                     <span>+91 93451 45678</span>
                   </a>
                 </div>
@@ -199,19 +199,19 @@ export default function Footer() {
 
           {/* Column 4 – Email and Working Hours */}
           <div className="lg:col-span-3 flex flex-col space-y-4">
-            <h3 className="text-white font-bold tracking-wide uppercase text-xs">
+            <h3 className="text-white font-bold tracking-wider uppercase text-sm">
               Email &amp; Hours
             </h3>
 
-            <div className="space-y-4 text-xs">
+            <div className="space-y-5 text-sm">
               {/* Email */}
               <div className="flex gap-2.5 items-center">
-                <Mail className="w-4 h-4 text-brand-red shrink-0" />
+                <Mail className="w-5 h-5 text-brand-red shrink-0" />
                 <div className="flex flex-col">
-                  <span className="font-bold text-white text-xs">Email</span>
+                  <span className="font-bold text-white text-sm">Email</span>
                   <a
                     href="mailto:kpriyadharshinidrivingschool@gmail.com"
-                    className="text-gray-400 hover:text-white transition-colors text-xs mt-0.5"
+                    className="text-gray-400 hover:text-white transition-colors text-sm mt-0.5"
                     itemProp="email"
                   >
                     kpriyadharshinidrivingschool@gmail.com
@@ -221,10 +221,10 @@ export default function Footer() {
 
               {/* Working Hours */}
               <div className="flex gap-2.5 items-start">
-                <Clock className="w-4 h-4 text-brand-red shrink-0 mt-0.5" />
+                <Clock className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                 <div className="flex flex-col">
-                  <span className="font-bold text-white text-xs">Working Hours</span>
-                  <div className="text-gray-400 text-xs leading-normal mt-0.5">
+                  <span className="font-bold text-white text-sm">Working Hours</span>
+                  <div className="text-gray-400 text-sm leading-normal mt-0.5">
                     <span className="block text-gray-300">
                       Monday–Saturday: 6:00 AM – 5:30 PM
                     </span>
@@ -239,19 +239,19 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
           <div className="flex flex-col items-center md:items-start gap-1">
             <span>
               © {currentYear} K. Priyadharshini Driving School. All rights reserved.
             </span>
 
-            <span className="text-gray-600">
+            <span className="text-gray-500">
               Designed &amp; Developed by The Computing Effect
             </span>
           </div>
 
           {/* Legal Links */}
-          <div className="flex flex-wrap gap-4 md:gap-6 text-gray-500">
+          <div className="flex flex-wrap gap-4 md:gap-6 text-gray-400">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">
               Privacy Policy
             </Link>

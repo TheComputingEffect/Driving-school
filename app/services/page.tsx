@@ -3,6 +3,7 @@ import { constructMetadata } from "@/lib/seo/metadata";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 // Premium Service Sections
 import ServicesHero from "@/components/sections/ServicesHero";
+import ServicesSection from "@/components/sections/ServicesSection";
 import ServicePackages from "@/components/sections/ServicePackages";
 import DetailedServices from "@/components/sections/DetailedServices";
 import ContactSection from "@/components/sections/ContactSection";
@@ -25,13 +26,16 @@ export default function ServicesPage() {
       {/* 1. Page heading and introduction */}
       <ServicesHero />
 
-      {/* 2. Training Packages section */}
+      {/* 2. Licence & RTO Services (6 services) */}
+      <ServicesSection />
+
+      {/* 3. Training Packages section */}
       <ServicePackages />
 
-      {/* 3. Five alternating service sections */}
+      {/* 4. Five alternating service sections */}
       <DetailedServices />
 
-      {/* 4. Enquiry or contact call-to-action section */}
+      {/* 5. Enquiry or contact call-to-action section */}
       <ContactSection />
     </div>
   );
