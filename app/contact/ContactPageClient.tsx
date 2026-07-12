@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Phone,
@@ -30,6 +30,32 @@ export default function ContactPageClient() {
 
   // Call Us Modal State
   const [isCallModalOpen, setIsCallModalOpen] = useState(false);
+
+  // Visit Us Modal State
+  const [isVisitModalOpen, setIsVisitModalOpen] = useState(false);
+
+  // Auto-select course or service from query parameter
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const courseParam = params.get("course") || params.get("service");
+      if (courseParam) {
+        const decodedParam = decodeURIComponent(courseParam).trim();
+        const allOptionValues = [
+          "Beginner's Course", "Refresher Course", "LMV + Two Wheeler",
+          "Experienced Trainers", "Ladies Taught by Ladies", "Flexible Batches & Timings", "Student Discounts", "Licence Assistance",
+          "Car Driving Lessons", "Manual Car Training", "Automatic Car Training", "Ladies Driving Classes", "Student Packages"
+        ];
+        
+        const matched = allOptionValues.find(
+          val => val.toLowerCase() === decodedParam.toLowerCase()
+        );
+        if (matched) {
+          setTrainingType(matched);
+        }
+      }
+    }
+  }, []);
 
   // Form State
   const [fullName, setFullName] = useState("");
@@ -337,7 +363,7 @@ export default function ContactPageClient() {
               <motion.div
                 variants={cardVariants}
                 className="premium-card p-5 flex flex-col justify-between cursor-pointer group hover:border-brand-red/30 transition-all duration-300"
-                onClick={scrollToMap}
+                onClick={() => setIsVisitModalOpen(true)}
               >
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-brand-red-light flex items-center justify-center text-brand-red mb-3 group-hover:scale-110 transition-transform">
@@ -348,7 +374,7 @@ export default function ContactPageClient() {
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    scrollToMap();
+                    setIsVisitModalOpen(true);
                   }}
                   className="inline-flex items-center gap-1 text-xs font-bold text-brand-red hover:text-red-700 transition-colors text-left cursor-pointer"
                 >
@@ -494,11 +520,25 @@ export default function ContactPageClient() {
                         }`}
                       >
                         <option value="" disabled>Select Course</option>
-                        {courses.map((course) => (
-                          <option key={course.id} value={course.title}>
-                            {course.title}
-                          </option>
-                        ))}
+                        <optgroup label="Training Packages">
+                          <option value="Beginner's Course">Beginner's Course</option>
+                          <option value="Refresher Course">Refresher Course</option>
+                          <option value="LMV + Two Wheeler">LMV + Two Wheeler</option>
+                        </optgroup>
+                        <optgroup label="Services">
+                          <option value="Experienced Trainers">Experienced Trainers</option>
+                          <option value="Ladies Taught by Ladies">Ladies Taught by Ladies</option>
+                          <option value="Flexible Batches & Timings">Flexible Batches & Timings</option>
+                          <option value="Student Discounts">Student Discounts</option>
+                          <option value="Licence Assistance">Licence Assistance</option>
+                        </optgroup>
+                        <optgroup label="Regular Courses">
+                          {courses.map((course) => (
+                            <option key={course.id} value={course.title}>
+                              {course.title}
+                            </option>
+                          ))}
+                        </optgroup>
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-brand-muted">
                         <svg className="fill-current h-4 w-4 text-brand-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -669,6 +709,108 @@ export default function ContactPageClient() {
                     <Phone className="w-3.5 h-3.5" />
                     <span>Call Now</span>
                   </a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* Visit Us Modal */}
+      <AnimatePresence>
+        {isVisitModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-black/60 backdrop-blur-xs"
+              onClick={() => setIsVisitModalOpen(false)}
+            />
+            {/* Modal Content */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="relative bg-white rounded-3xl shadow-2xl p-6 md:p-8 max-w-2xl w-full border border-brand-border z-10 overflow-hidden"
+            >
+              {/* Colored top gradient stripe */}
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-brand-red via-brand-yellow to-brand-blue" />
+              
+              {/* Close Button */}
+              <button
+                onClick={() => setIsVisitModalOpen(false)}
+                className="absolute top-4 right-4 p-1.5 rounded-lg text-brand-muted hover:text-brand-text hover:bg-brand-bg transition-colors cursor-pointer"
+                aria-label="Close modal"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="text-center mb-6">
+                <div className="mx-auto w-12 h-12 rounded-full bg-brand-blue-light flex items-center justify-center text-brand-blue mb-3">
+                  <MapPin className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-extrabold text-brand-text font-heading">Visit Our Branches</h3>
+                <p className="text-brand-muted text-xs mt-1">Find our locations and get directions</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Kovaipudur Branch */}
+                <div className="p-5 rounded-2xl bg-brand-bg border border-brand-border flex flex-col justify-between hover:border-brand-red/30 transition-all group">
+                  <div>
+                    <h4 className="font-bold text-brand-text text-base group-hover:text-brand-red transition-colors flex items-center gap-2 font-heading">
+                      <MapPin className="w-4 h-4 text-brand-red" />
+                      Kovaipudur Branch
+                    </h4>
+                    <p className="text-xs text-brand-muted mt-2 leading-relaxed">
+                      Near TV Sekaran School, Kovaipudur, Coimbatore – 641042
+                    </p>
+                    <div className="mt-4 flex items-center gap-2 text-xs font-semibold text-brand-text">
+                      <span className="text-brand-muted">Phone:</span>
+                      <a href="tel:+919843407878" className="text-brand-red hover:underline">+91 98434 07878</a>
+                    </div>
+                  </div>
+                  <div className="mt-6">
+                    <a
+                      href={contactInfo.branches.main.mapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs font-bold rounded-xl bg-brand-red text-white hover:bg-red-700 transition-colors shadow-md shadow-brand-red/10 cursor-pointer"
+                    >
+                      <span>View on Google Maps</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
+
+                {/* Sivananda Colony Branch */}
+                <div className="p-5 rounded-2xl bg-brand-bg border border-brand-border flex flex-col justify-between hover:border-brand-blue/30 transition-all group">
+                  <div>
+                    <h4 className="font-bold text-brand-text text-base group-hover:text-brand-blue transition-colors flex items-center gap-2 font-heading">
+                      <MapPin className="w-4 h-4 text-brand-blue" />
+                      Sivananda Colony Branch
+                    </h4>
+                    <p className="text-xs text-brand-muted mt-2 leading-relaxed">
+                      15, Sivananda Colony, Tatabad, Coimbatore, Tamil Nadu 641012
+                    </p>
+                    <div className="mt-4 flex items-center gap-2 text-xs font-semibold text-brand-text">
+                      <span className="text-brand-muted">Phone:</span>
+                      <a href="tel:+919345145678" className="text-brand-blue hover:underline">+91 93451 45678</a>
+                    </div>
+                  </div>
+                  <div className="mt-6">
+                    <a
+                      href={contactInfo.branches.branch2.mapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs font-bold rounded-xl bg-brand-blue text-white hover:bg-blue-700 transition-colors shadow-md shadow-brand-blue/10 cursor-pointer"
+                    >
+                      <span>View on Google Maps</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>

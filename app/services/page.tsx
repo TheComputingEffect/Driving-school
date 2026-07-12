@@ -2,9 +2,10 @@ import React from "react";
 import { constructMetadata } from "@/lib/seo/metadata";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 // Premium Service Sections
-import DetailedServices from "@/components/sections/DetailedServices";
-import ServicesSection from "@/components/sections/ServicesSection";
+import ServicesHero from "@/components/sections/ServicesHero";
 import ServicePackages from "@/components/sections/ServicePackages";
+import DetailedServices from "@/components/sections/DetailedServices";
+import ContactSection from "@/components/sections/ContactSection";
 
 export const metadata = constructMetadata({
   title: "Driving Licence & RTO Services | KPD",
@@ -21,14 +22,17 @@ export default function ServicesPage() {
     <div className="flex flex-col w-full bg-brand-bg">
       <BreadcrumbSchema items={crumbs} />
 
-      {/* 2. Detailed Breakdown of Core Services */}
+      {/* 1. Page heading and introduction */}
+      <ServicesHero />
+
+      {/* 2. Training Packages section */}
+      <ServicePackages />
+
+      {/* 3. Five alternating service sections */}
       <DetailedServices />
 
-      {/* 2.5. Grid of RTO & Licence Services */}
-      <ServicesSection />
-
-      {/* 3. Pricing & Training Packages */}
-      <ServicePackages />
+      {/* 4. Enquiry or contact call-to-action section */}
+      <ContactSection />
     </div>
   );
 }

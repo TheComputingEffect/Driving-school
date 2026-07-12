@@ -9,30 +9,69 @@ import CTAButton from "../shared/CTAButton";
 export default function DetailedServices() {
   const details = [
     {
-      title: "Comprehensive Driving Training",
-      badge: "Our Core Service",
-      description: "Learn to drive confidently in real traffic conditions. Our structured curriculum takes you from basic vehicle control to advanced defensive driving techniques.",
+      title: "Experienced Trainers",
+      badge: "Expert Coaching",
+      description: "Our certified professional instructors have over 10+ years of active field training experience. They are patient, friendly, and dedicated to teaching defensive driving skills that keep you safe for life.",
       features: [
-        "Dedicated Female Instructors available",
-        "Dual-control modern cars for maximum safety",
-        "City traffic, highway, and night driving exposure",
-        "Doorstep pickup and drop facility"
+        "10+ Years of active field training experience",
+        "Patient, friendly, and stress-free coaching style",
+        "Specialized defensive driving techniques",
+        "1-on-1 personalized attention for every student"
       ],
       image: "https://images.unsplash.com/photo-1549317336-206569e8475c?q=80&w=2070&auto=format&fit=crop",
       flipped: false
     },
     {
-      title: "Hassle-Free RTO Assistance",
-      badge: "Save Time",
-      description: "Skip the long queues and confusing paperwork. We provide end-to-end support for all your Regional Transport Office requirements in Coimbatore.",
+      title: "Ladies Taught by Ladies",
+      badge: "Empowered Learning",
+      description: "We offer specialized driving training for female students, taught exclusively by certified female instructors. Learn in a comfortable, supportive environment designed to build your confidence on the road.",
       features: [
-        "New LLR and Permanent Licence filing",
-        "Licence Renewal and Address Change",
-        "Vehicle Fitness Certificate (FC) processing",
-        "Hypothecation removal and name transfers"
+        "1-on-1 female instructor matching",
+        "Comfortable and supportive learning environment",
+        "Step-by-step guidance for absolute beginners",
+        "Flexible morning and evening training slots"
+      ],
+      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop",
+      flipped: true
+    },
+    {
+      title: "Flexible Batches & Timings",
+      badge: "Convenient Scheduling",
+      description: "We offer flexible morning, evening, and weekend training batches designed to fit work, college, and personal schedules. Learn to drive at your own pace without disrupting your daily routine.",
+      features: [
+        "Early morning sessions starting from 6:00 AM",
+        "Evening and weekend training options",
+        "Easy rescheduling of classes with prior notice",
+        "Custom-paced learning curriculum for busy schedules"
+      ],
+      image: "https://images.unsplash.com/photo-1508962914676-134849a727f0?q=80&w=2070&auto=format&fit=crop",
+      flipped: false
+    },
+    {
+      title: "Student Discounts",
+      badge: "Affordable Education",
+      description: "Special pricing packages designed specifically for college students in Coimbatore. Get premium quality driving training and licence processing at pocket-friendly rates.",
+      features: [
+        "Exclusive discounts for college students",
+        "Special group booking offers for friends/classmates",
+        "Exam-friendly timing adjustments",
+        "Easy installment payment options"
+      ],
+      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop",
+      flipped: true
+    },
+    {
+      title: "Licence Assistance",
+      badge: "RTO Support",
+      description: "Complete, end-to-end guidance for obtaining your Learner's Licence (LLR) and Permanent Driving Licence. We handle all paperwork, document filings, and scheduling at local RTOs.",
+      features: [
+        "Online document upload and RTO filing",
+        "LLR preparation material and test slot booking",
+        "Practical RTO driving test coordination",
+        "Hassle-free smart card licence delivery tracking"
       ],
       image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop",
-      flipped: true
+      flipped: false
     }
   ];
 
@@ -104,8 +143,8 @@ export default function DetailedServices() {
                 ))}
               </ul>
               
-              <CTAButton href="/contact" variant="outline" className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white">
-                Learn More
+              <CTAButton href={`/contact?service=${encodeURIComponent(detail.title)}`} variant="outline" className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white">
+                Enquire Now
               </CTAButton>
             </motion.div>
           </div>
