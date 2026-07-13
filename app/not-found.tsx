@@ -8,7 +8,7 @@ export default function NotFound() {
     <div className="flex-1 bg-brand-bg flex flex-col justify-center items-center py-20 px-4 text-center">
       <div className="max-w-md w-full">
         {/* Visual 404 badge */}
-        <span className="inline-block text-sm font-extrabold uppercase tracking-widest text-brand-red bg-brand-red-light px-4.5 py-2 rounded-full mb-6">
+        <span className="inline-block text-sm font-extrabold uppercase tracking-widest text-brand-red bg-brand-red-light px-5 py-2 rounded-full mb-6">
           Error 404
         </span>
 
@@ -24,7 +24,7 @@ export default function NotFound() {
         {/* Navigation fallback directory list */}
         <div className="bg-white border border-brand-border rounded-2xl p-6 text-left mb-8 shadow-sm">
           <h3 className="text-sm font-bold text-brand-text mb-4 flex items-center gap-2">
-            <Compass className="w-4.5 h-4.5 text-brand-blue" />
+            <Compass className="w-5 h-5 text-brand-blue" />
             Quick Navigation Links
           </h3>
           <ul className="space-y-3 text-xs md:text-sm font-medium text-brand-blue">

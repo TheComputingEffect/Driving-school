@@ -1,14 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, Clock, Car } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { contactInfo } from "@/content/contactInfo";
 
 const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     viewBox="0 0 24 24"
-    width="24"
-    height="24"
+    width="20"
+    height="20"
     stroke="currentColor"
     strokeWidth="2"
     fill="none"
@@ -23,8 +23,8 @@ const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
 const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     viewBox="0 0 24 24"
-    width="24"
-    height="24"
+    width="20"
+    height="20"
     stroke="currentColor"
     strokeWidth="2"
     fill="none"
@@ -42,47 +42,45 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0B1121] text-gray-300 pt-20 pb-8 relative overflow-hidden">
+    <footer className="bg-[#0B1121] text-gray-300 pt-12 pb-6 relative overflow-hidden">
       {/* Decorative Blur Elements */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent" />
-      <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-brand-red/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-[-20%] left-[-10%] w-[400px] h-[400px] bg-brand-red/5 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-[-20%] right-[-10%] w-[400px] h-[400px] bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
 
       <div
         className="max-w-[1200px] mx-auto px-4 md:px-6 relative z-10"
         itemScope
         itemType="https://schema.org/DrivingSchool"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-          {/* Brand Column */}
-          <div className="lg:col-span-4 flex flex-col space-y-6">
-            <Link href="/" className="flex items-center gap-3 w-fit">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-x-8 mb-8">
+          {/* Column 1 – Logo and Description */}
+          <div className="lg:col-span-4 flex flex-col space-y-4">
+            <Link href="/" className="flex items-center gap-2.5 w-fit">
               <Image
-                src="/logo_KPD.png"
+                src="/logo_KPD_transparent.png"
                 alt="K. Priyadharshini Driving School Logo"
-                width={180}
-                height={45}
-                className="h-10 md:h-12 w-auto object-contain hover:scale-[1.03] transition-transform duration-300 bg-white/90 p-1.5 rounded-lg"
+                width={150}
+                height={38}
+                className="h-9 w-auto object-contain hover:scale-[1.03] transition-transform duration-300"
               />
             </Link>
 
-            <p className="text-gray-400 leading-relaxed text-sm pr-4">
-              Coimbatore&apos;s premium Govt. approved driving academy. We
-              focus on building confident, responsible drivers through
-              dual-control vehicles and patient, professional trainers.
+            <p className="text-gray-400 leading-relaxed text-sm text-justify">
+              Coimbatore’s premium government-approved driving academy. We focus on building confident, responsible drivers through dual-control vehicles and patient, professional trainers.
             </p>
 
             {/* Social Links */}
-            <div className="flex gap-3">
+            <div className="flex gap-3 pt-1">
               {contactInfo.socialLinks.facebook && (
                 <a
                   href={contactInfo.socialLinks.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:border-brand-red/50 hover:bg-brand-red/10 flex items-center justify-center text-gray-400 hover:text-white transition-all"
+                  className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-brand-red/50 hover:bg-brand-red/10 flex items-center justify-center text-gray-400 hover:text-white transition-all"
                   aria-label="Facebook Page"
                 >
-                  <FacebookIcon className="w-4 h-4" />
+                  <FacebookIcon className="w-5 h-5" />
                 </a>
               )}
               {contactInfo.socialLinks.instagram && (
@@ -90,18 +88,18 @@ export default function Footer() {
                   href={contactInfo.socialLinks.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:border-brand-red/50 hover:bg-brand-red/10 flex items-center justify-center text-gray-400 hover:text-white transition-all"
+                  className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-brand-red/50 hover:bg-brand-red/10 flex items-center justify-center text-gray-400 hover:text-white transition-all"
                   aria-label="Instagram Profile"
                 >
-                  <InstagramIcon className="w-4 h-4" />
+                  <InstagramIcon className="w-5 h-5" />
                 </a>
               )}
             </div>
           </div>
 
-          {/* Quick Links Column */}
-          <div className="lg:col-span-2 lg:col-start-6 flex flex-col space-y-6">
-            <h3 className="text-white font-bold tracking-wide uppercase text-sm">
+          {/* Column 2 – Explore */}
+          <div className="lg:col-span-2 flex flex-col space-y-4">
+            <h3 className="text-white font-bold tracking-wider uppercase text-sm">
               Explore
             </h3>
 
@@ -144,165 +142,116 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services Column */}
-          <div className="lg:col-span-3 flex flex-col space-y-6">
-            <h3 className="text-white font-bold tracking-wide uppercase text-sm">
-              Services
+          {/* Column 3 – Address and Phone Numbers */}
+          <div className="lg:col-span-3 flex flex-col space-y-4">
+            <h3 className="text-white font-bold tracking-wider uppercase text-sm">
+              Address &amp; Phone
             </h3>
 
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link
-                  href="/services/driving-licence"
-                  className="text-gray-400 hover:text-white hover:translate-x-1 inline-block transition-all"
-                >
-                  Driving Licence Application
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="/services/licence-renewal"
-                  className="text-gray-400 hover:text-white hover:translate-x-1 inline-block transition-all"
-                >
-                  Licence Renewal
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="/services"
-                  className="text-gray-400 hover:text-white hover:translate-x-1 inline-block transition-all"
-                >
-                  Name Change
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="/services"
-                  className="text-gray-400 hover:text-white hover:translate-x-1 inline-block transition-all"
-                >
-                  Address Change
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="/services"
-                  className="text-gray-400 hover:text-white hover:translate-x-1 inline-block transition-all"
-                >
-                  Vehicle FC Upgrade
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="/services/rto-services"
-                  className="text-gray-400 hover:text-white hover:translate-x-1 inline-block transition-all"
-                >
-                  RTO Services
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Details Column */}
-          <div className="lg:col-span-3 flex flex-col space-y-6">
-            <h3 className="text-white font-bold tracking-wide uppercase text-sm">
-              Get In Touch
-            </h3>
-
-            <ul className="space-y-6 text-sm">
+            <div className="space-y-5 text-sm">
               {/* Kovaipudur Branch */}
-              <li className="flex gap-3 items-start group">
-                <MapPin className="w-5 h-5 text-brand-red shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+              <div className="flex gap-2.5 items-start">
+                <MapPin className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                 <div className="flex flex-col">
-                  <span className="font-bold text-white text-xs uppercase tracking-wide">Kovaipudur Branch (Main)</span>
+                  <span className="font-bold text-white text-sm">Kovaipudur Branch</span>
                   <a
                     href={contactInfo.branches.main.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 leading-relaxed hover:text-white hover:underline transition-all block text-xs mt-1"
+                    className="text-gray-400 leading-normal hover:text-white hover:underline transition-all block text-sm mt-0.5"
                   >
-                    {contactInfo.branches.main.address}
+                    Near TV Sekaran School, Kovaipudur, Coimbatore – 641042
                   </a>
                   <a
                     href="tel:+919843407878"
-                    className="text-gray-400 hover:text-white transition-colors text-xs font-semibold mt-1 flex items-center gap-1.5"
+                    className="text-gray-400 hover:text-white transition-colors text-sm font-semibold mt-1 flex items-center gap-1.5"
                   >
-                    <Phone className="w-3.5 h-3.5 text-brand-red shrink-0" />
-                    <span>98434 07878</span>
+                    <Phone className="w-4 h-4 text-brand-red shrink-0" />
+                    <span>+91 98434 07878</span>
                   </a>
                 </div>
-              </li>
+              </div>
 
               {/* Sivananda Colony Branch */}
-              <li className="flex gap-3 items-start group">
-                <MapPin className="w-5 h-5 text-brand-red shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+              <div className="flex gap-2.5 items-start">
+                <MapPin className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                 <div className="flex flex-col">
-                  <span className="font-bold text-white text-xs uppercase tracking-wide">Sivananda Colony Branch</span>
+                  <span className="font-bold text-white text-sm">Sivananda Colony Branch</span>
                   <a
                     href={contactInfo.branches.branch2.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 leading-relaxed hover:text-white hover:underline transition-all block text-xs mt-1"
+                    className="text-gray-400 leading-normal hover:text-white hover:underline transition-all block text-sm mt-0.5"
                   >
-                    {contactInfo.branches.branch2.address}
+                    15, Sivananda Colony, Tatabad, Coimbatore, Tamil Nadu 641012
                   </a>
                   <a
                     href="tel:+919345145678"
-                    className="text-gray-400 hover:text-white transition-colors text-xs font-semibold mt-1 flex items-center gap-1.5"
+                    className="text-gray-400 hover:text-white transition-colors text-sm font-semibold mt-1 flex items-center gap-1.5"
                   >
-                    <Phone className="w-3.5 h-3.5 text-brand-red shrink-0" />
-                    <span>93451 45678</span>
+                    <Phone className="w-4 h-4 text-brand-red shrink-0" />
+                    <span>+91 93451 45678</span>
                   </a>
                 </div>
-              </li>
+              </div>
+            </div>
+          </div>
 
+          {/* Column 4 – Email and Working Hours */}
+          <div className="lg:col-span-3 flex flex-col space-y-4">
+            <h3 className="text-white font-bold tracking-wider uppercase text-sm">
+              Email &amp; Hours
+            </h3>
+
+            <div className="space-y-5 text-sm">
               {/* Email */}
-              <li className="flex gap-3 items-center group">
-                <Mail className="w-5 h-5 text-brand-red shrink-0 group-hover:scale-110 transition-transform" />
-                <a
-                  href={`mailto:${contactInfo.email}`}
-                  className="text-gray-400 hover:text-white transition-colors break-all text-xs"
-                  itemProp="email"
-                >
-                  {contactInfo.email}
-                </a>
-              </li>
-
-              {/* Operating Hours */}
-              <li className="flex gap-3 items-start group">
-                <Clock className="w-5 h-5 text-brand-red shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                <div className="text-gray-400 text-xs leading-relaxed">
-                  <span className="block font-medium text-gray-300">
-                    {contactInfo.operatingHours.weekdays}
-                  </span>
-                  <span className="block">
-                    {contactInfo.operatingHours.sunday}
-                  </span>
+              <div className="flex gap-2.5 items-center">
+                <Mail className="w-5 h-5 text-brand-red shrink-0" />
+                <div className="flex flex-col">
+                  <span className="font-bold text-white text-sm">Email</span>
+                  <a
+                    href="mailto:kpriyadharshinidrivingschool@gmail.com"
+                    className="text-gray-400 hover:text-white transition-colors text-sm mt-0.5"
+                    itemProp="email"
+                  >
+                    kpriyadharshinidrivingschool@gmail.com
+                  </a>
                 </div>
-              </li>
-            </ul>
+              </div>
+
+              {/* Working Hours */}
+              <div className="flex gap-2.5 items-start">
+                <Clock className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
+                <div className="flex flex-col">
+                  <span className="font-bold text-white text-sm">Working Hours</span>
+                  <div className="text-gray-400 text-sm leading-normal mt-0.5">
+                    <span className="block text-gray-300">
+                      Monday–Saturday: 6:00 AM – 5:30 PM
+                    </span>
+                    <span className="block">
+                      Sunday: 8:00 AM – 2:00 PM
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
           <div className="flex flex-col items-center md:items-start gap-1">
             <span>
-              © {currentYear} K. Priyadharshini Driving School. All rights
-              reserved.
+              © {currentYear} K. Priyadharshini Driving School. All rights reserved.
             </span>
 
-            <span className="text-gray-600">
-              Designed & Developed by The Computing Effect
+            <span className="text-gray-500">
+              Designed &amp; Developed by The Computing Effect
             </span>
           </div>
 
           {/* Legal Links */}
-          <div className="flex flex-wrap gap-4 md:gap-6 text-gray-500">
+          <div className="flex flex-wrap gap-4 md:gap-6 text-gray-400">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">
               Privacy Policy
             </Link>

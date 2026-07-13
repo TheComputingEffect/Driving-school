@@ -27,9 +27,9 @@ export default function ServicePackages() {
       popular: false,
       features: [
         "Targeted Practical Training",
-        "Focus on Weak Areas (Parking, etc.)",
+        "Focus on Weak Areas such as parking",
         "Heavy Traffic Exposure",
-        "Use your own car or our dual-control car",
+        "Option to use the learner’s own car or the driving school’s dual-control car",
         "Flexible Timings"
       ]
     },
@@ -39,7 +39,7 @@ export default function ServicePackages() {
       price: "Best Value",
       popular: false,
       features: [
-        "Car + Gearless Scooter Training",
+        "Car and Gearless Scooter Training",
         "Combined Licence Processing",
         "Dedicated Female Instructors",
         "RTO Test Assistance",
@@ -63,7 +63,7 @@ export default function ServicePackages() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {packages.map((pkg, idx) => (
             <motion.div
               key={idx}
@@ -100,7 +100,7 @@ export default function ServicePackages() {
 
               <div className="mt-auto pt-8">
                 <CTAButton 
-                  href="/contact" 
+                  href={`/contact?course=${encodeURIComponent(pkg.title)}`} 
                   variant={pkg.popular ? "primary" : "outline"} 
                   className="w-full justify-center"
                 >

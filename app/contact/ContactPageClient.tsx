@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Phone,
@@ -30,6 +30,32 @@ export default function ContactPageClient() {
 
   // Call Us Modal State
   const [isCallModalOpen, setIsCallModalOpen] = useState(false);
+
+  // Visit Us Modal State
+  const [isVisitModalOpen, setIsVisitModalOpen] = useState(false);
+
+  // Auto-select course or service from query parameter
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const courseParam = params.get("course") || params.get("service");
+      if (courseParam) {
+        const decodedParam = decodeURIComponent(courseParam).trim();
+        const allOptionValues = [
+          "Beginner's Course", "Refresher Course", "LMV + Two Wheeler",
+          "Experienced Trainers", "Ladies Taught by Ladies", "Flexible Batches & Timings", "Student Discounts", "Licence Assistance",
+          "Car Driving Lessons", "Manual Car Training", "Automatic Car Training", "Ladies Driving Classes", "Student Packages"
+        ];
+        
+        const matched = allOptionValues.find(
+          val => val.toLowerCase() === decodedParam.toLowerCase()
+        );
+        if (matched) {
+          setTrainingType(matched);
+        }
+      }
+    }
+  }, []);
 
   // Form State
   const [fullName, setFullName] = useState("");
@@ -323,7 +349,11 @@ export default function ContactPageClient() {
               <motion.div variants={cardVariants} className="premium-card p-5 flex flex-col justify-between">
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 mb-3">
-                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.487-1.761-1.66-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                    <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="10" fill="#ffffff" />
+                      <path d="M12 3c-4.97 0-9 4.03-9 9 0 1.58.41 3.06 1.13 4.35L3 21l4.82-1.22c1.23.67 2.63 1.06 4.12 1.06 4.97 0 9-4.03 9-9s-4.03-9-9-9z" fill="#25D366" />
+                      <path d="M15.42 12.87c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.54.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.37-1.94-1.19-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.52.1.47-.07 1.44-.59 1.64-1.15.2-.56.2-1.03.14-1.13-.06-.1-.22-.16-.46-.28z" fill="#ffffff" />
+                    </svg>
                   </div>
                   <h3 className="text-base font-bold text-brand-text mb-1.5">WhatsApp</h3>
                 </div>
@@ -337,7 +367,7 @@ export default function ContactPageClient() {
               <motion.div
                 variants={cardVariants}
                 className="premium-card p-5 flex flex-col justify-between cursor-pointer group hover:border-brand-red/30 transition-all duration-300"
-                onClick={scrollToMap}
+                onClick={() => setIsVisitModalOpen(true)}
               >
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-brand-red-light flex items-center justify-center text-brand-red mb-3 group-hover:scale-110 transition-transform">
@@ -348,7 +378,7 @@ export default function ContactPageClient() {
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    scrollToMap();
+                    setIsVisitModalOpen(true);
                   }}
                   className="inline-flex items-center gap-1 text-xs font-bold text-brand-red hover:text-red-700 transition-colors text-left cursor-pointer"
                 >
@@ -494,11 +524,25 @@ export default function ContactPageClient() {
                         }`}
                       >
                         <option value="" disabled>Select Course</option>
-                        {courses.map((course) => (
-                          <option key={course.id} value={course.title}>
-                            {course.title}
-                          </option>
-                        ))}
+                        <optgroup label="Training Packages">
+                          <option value="Beginner's Course">Beginner's Course</option>
+                          <option value="Refresher Course">Refresher Course</option>
+                          <option value="LMV + Two Wheeler">LMV + Two Wheeler</option>
+                        </optgroup>
+                        <optgroup label="Services">
+                          <option value="Experienced Trainers">Experienced Trainers</option>
+                          <option value="Ladies Taught by Ladies">Ladies Taught by Ladies</option>
+                          <option value="Flexible Batches & Timings">Flexible Batches & Timings</option>
+                          <option value="Student Discounts">Student Discounts</option>
+                          <option value="Licence Assistance">Licence Assistance</option>
+                        </optgroup>
+                        <optgroup label="Regular Courses">
+                          {courses.map((course) => (
+                            <option key={course.id} value={course.title}>
+                              {course.title}
+                            </option>
+                          ))}
+                        </optgroup>
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-brand-muted">
                         <svg className="fill-current h-4 w-4 text-brand-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -588,7 +632,7 @@ export default function ContactPageClient() {
                   ) : (
                     <>
                       <span>Send Enquiry</span>
-                      <ArrowRight className="w-4.5 h-4.5" />
+                      <ArrowRight className="w-5 h-5" />
                     </>
                   )}
                 </button>
@@ -669,6 +713,108 @@ export default function ContactPageClient() {
                     <Phone className="w-3.5 h-3.5" />
                     <span>Call Now</span>
                   </a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* Visit Us Modal */}
+      <AnimatePresence>
+        {isVisitModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-black/60 backdrop-blur-xs"
+              onClick={() => setIsVisitModalOpen(false)}
+            />
+            {/* Modal Content */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="relative bg-white rounded-3xl shadow-2xl p-6 md:p-8 max-w-2xl w-full border border-brand-border z-10 overflow-hidden"
+            >
+              {/* Colored top gradient stripe */}
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-brand-red via-brand-yellow to-brand-blue" />
+              
+              {/* Close Button */}
+              <button
+                onClick={() => setIsVisitModalOpen(false)}
+                className="absolute top-4 right-4 p-1.5 rounded-lg text-brand-muted hover:text-brand-text hover:bg-brand-bg transition-colors cursor-pointer"
+                aria-label="Close modal"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="text-center mb-6">
+                <div className="mx-auto w-12 h-12 rounded-full bg-brand-blue-light flex items-center justify-center text-brand-blue mb-3">
+                  <MapPin className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-extrabold text-brand-text font-heading">Visit Our Branches</h3>
+                <p className="text-brand-muted text-xs mt-1">Find our locations and get directions</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Kovaipudur Branch */}
+                <div className="p-5 rounded-2xl bg-brand-bg border border-brand-border flex flex-col justify-between hover:border-brand-red/30 transition-all group">
+                  <div>
+                    <h4 className="font-bold text-brand-text text-base group-hover:text-brand-red transition-colors flex items-center gap-2 font-heading">
+                      <MapPin className="w-4 h-4 text-brand-red" />
+                      Kovaipudur Branch
+                    </h4>
+                    <p className="text-xs text-brand-muted mt-2 leading-relaxed">
+                      Near TV Sekaran School, Kovaipudur, Coimbatore – 641042
+                    </p>
+                    <div className="mt-4 flex items-center gap-2 text-xs font-semibold text-brand-text">
+                      <span className="text-brand-muted">Phone:</span>
+                      <a href="tel:+919843407878" className="text-brand-red hover:underline">+91 98434 07878</a>
+                    </div>
+                  </div>
+                  <div className="mt-6">
+                    <a
+                      href={contactInfo.branches.main.mapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs font-bold rounded-xl bg-brand-red text-white hover:bg-red-700 transition-colors shadow-md shadow-brand-red/10 cursor-pointer"
+                    >
+                      <span>View on Google Maps</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
+
+                {/* Sivananda Colony Branch */}
+                <div className="p-5 rounded-2xl bg-brand-bg border border-brand-border flex flex-col justify-between hover:border-brand-blue/30 transition-all group">
+                  <div>
+                    <h4 className="font-bold text-brand-text text-base group-hover:text-brand-blue transition-colors flex items-center gap-2 font-heading">
+                      <MapPin className="w-4 h-4 text-brand-blue" />
+                      Sivananda Colony Branch
+                    </h4>
+                    <p className="text-xs text-brand-muted mt-2 leading-relaxed">
+                      15, Sivananda Colony, Tatabad, Coimbatore, Tamil Nadu 641012
+                    </p>
+                    <div className="mt-4 flex items-center gap-2 text-xs font-semibold text-brand-text">
+                      <span className="text-brand-muted">Phone:</span>
+                      <a href="tel:+919345145678" className="text-brand-blue hover:underline">+91 93451 45678</a>
+                    </div>
+                  </div>
+                  <div className="mt-6">
+                    <a
+                      href={contactInfo.branches.branch2.mapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs font-bold rounded-xl bg-brand-blue text-white hover:bg-blue-700 transition-colors shadow-md shadow-brand-blue/10 cursor-pointer"
+                    >
+                      <span>View on Google Maps</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>
